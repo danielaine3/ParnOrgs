@@ -39,12 +39,10 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-
 // Serve up static assets
 app.use(express.static('client/build'));
 // Add routes, both API and view
 app.use(routes);
-
 
 // Start the API server
 app.listen(PORT, () => {
