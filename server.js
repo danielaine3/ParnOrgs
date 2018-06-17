@@ -19,7 +19,7 @@ app.use(logger('dev'));
 
 // initialize passport
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/internshipAppDB');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/parnOrgs');
 
 app.use(session({
   secret: 'keyboard cat',
