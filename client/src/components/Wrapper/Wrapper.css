@@ -1,0 +1,10 @@
+.wrapper {
+    display: flex;
+   min-height: 80%;
+   flex-wrap: wrap;
+   -ms-flex-pack: center;
+   justify-content: center;
+   padding-top: 50px;
+   padding-bottom: 50px;
+   margin: 0 100px;
+}
