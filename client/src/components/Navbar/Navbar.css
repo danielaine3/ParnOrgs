@@ -1,0 +1,22 @@
+.navbar {
+	display:flex;
+	height:100px;
+	width: 100%;
+	background-color: #D85927;	
+}
+
+.brand {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 70px;	
+	margin:auto;
+}
+
+a:link {
+	color:#FFFFFF;
+	text-decoration: none;
+}
+
+a:visited {
+	color:#FFFFFF;
+	text-decoration: none;
+}
