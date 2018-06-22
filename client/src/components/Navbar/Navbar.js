@@ -3,7 +3,7 @@ import "./Navbar.css";
 
 const Navbar = props => (
 	<div className="navbar">
-		<a className="brand" href="/">KARDASHIAN KLICK</a>
+		<a className="brand" href="/">Parnassus Preparatory School</a>
 	</div>
 );
 
