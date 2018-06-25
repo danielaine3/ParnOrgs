@@ -3,7 +3,7 @@ import "./Footer.css";
 
 const Footer = props => (
 	<div className="footer">
-		Dani Carter 2018
+		&copy; Dani Carter 2018
 	</div>
 );
 
