@@ -96,25 +96,6 @@ class Navbar extends Component {
     const { classes } = this.props;
     return (
       <div>
-        <div>
-          <div>  
-            {/*  Logo */}
-            {this.props.currentUser && this.props.currentUser.username ?
-              <div variant="title" color="inherit" style={{ flex: 1 }} noWrap>{this.props.pageTitle}</div>
-            :
-              <div variant="title" color="inherit" style={{ flex: 1 }}>Intl.Intern</div>
-            }
-            { this.props.currentUser && this.props.currentUser.email ? 
-              <div>
-                <div color="inherit" variant="subheading" style={{display: 'inline-block', paddingRight: '10px'}}>
-                  {this.props.currentUser.email}
-                </div>
-                <button color="inherit" onClick={this.logoff}>Logoff</button>
-              </div> :
-              <button color="inherit" onClick={this.handleClickOpen}>Login</button>
-            }
-          </div>
-        </div>
         {/* login modal begin */}
         <div
           open={this.state.open}
@@ -125,13 +106,17 @@ class Navbar extends Component {
           <div id="alert-dialog-title">Login</div>
           <div>
             <form>
-              <text
+              <input
+				type="text"
+				placeholder="Username"
                 label="Username"
                 name="username"
                 value={this.state.username}
                 onChange={this.handleInputChange}
               />
-              <text
+			  <input	
+				type="text"
+				placeholder="Password"
                 label="Password"
                 name="password"
                 type="password"
