@@ -1,44 +1,6 @@
 import React, { Component } from 'react';
 import "./Navbar.css";
-// import AppBar from 'material-ui/AppBar';
-// import Toolbar from 'material-ui/Toolbar';
-// // from Material, used to inject an array of styles into the DOM
-// import { withStyles } from 'material-ui/styles';
-// import Button from 'material-ui/Button';
-// import TextField from 'material-ui/TextField';
-// import Typography from 'material-ui/Typography';
-// import Dialog, {
-//   DialogActions,
-//   DialogContent,
-//   DialogTitle,
-// } from 'material-ui/Dialog';
 import API from '../../utils/API';
-
-// const drawerWidth = 240;
-
-// const styles = theme => ({
-//   root: {
-//     flexGrow: 1,
-//   },
-//   appFrame: {
-//     zIndex: 1,
-//     overflow: 'hidden',
-//     position: 'relative',
-//     display: 'flex',
-//     width: '100%',
-//   },
-//   appBar: {
-//     position: 'fixed',
-//     // width: `calc(100% - ${drawerWidth}px)`,
-//     marginLeft: drawerWidth,
-//   },
-//   toolbar: theme.mixins.toolbar,
-//   content: {
-//     flexGrow: 1,
-//     backgroundColor: theme.palette.background.default,
-//     padding: theme.spacing.unit * 3,
-//   },
-// });
 
 class Navbar extends Component {
   state = {
@@ -93,7 +55,6 @@ class Navbar extends Component {
   }
 
   render() {
-    const { classes } = this.props;
     return (
       <div>
         {/* login modal begin */}

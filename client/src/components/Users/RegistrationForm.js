@@ -18,29 +18,29 @@ import IntegrationReactSelect from '../../components/Forms/IntegrationReactSelec
 import API from '../../utils/API';
 import util from '../../utils/util';
 
-const styles = theme => ({
-  root: {
-    flexGrow: 1,
-    padding: theme.spacing.unit * 4,
-  },
-  textField: {
-    marginLeft: theme.spacing.unit,
-    marginRight: theme.spacing.unit,
-    width: 200,
-  },
-  paper: {
-    padding: theme.spacing.unit * 2,
-    color: theme.palette.text.secondary,
-  },
-  divider: {
-    marginTop: 20,
-    marginBottom: 20,
-  },
-  registerButton: {
-    display: 'flex',
-    marginLeft: 'auto',
-  }
-});
+// const styles = theme => ({
+//   root: {
+//     flexGrow: 1,
+//     padding: theme.spacing.unit * 4,
+//   },
+//   textField: {
+//     marginLeft: theme.spacing.unit,
+//     marginRight: theme.spacing.unit,
+//     width: 200,
+//   },
+//   paper: {
+//     padding: theme.spacing.unit * 2,
+//     color: theme.palette.text.secondary,
+//   },
+//   divider: {
+//     marginTop: 20,
+//     marginBottom: 20,
+//   },
+//   registerButton: {
+//     display: 'flex',
+//     marginLeft: 'auto',
+//   }
+// });
 
 
 class RegistrationForm extends Component {
