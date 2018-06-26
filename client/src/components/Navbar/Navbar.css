@@ -1,12 +1,7 @@
-.navbar {
-	display:flex;
-	height:100px;
+.login {
+	display: block;
+	background-color: #9B2D3A;
+	height: 100%;
 	width: 100%;
-	background-color: #9B2D3A;	
-}
-
-.brand {
-	font-family: 'Open Sans Condensed', sans-serif;
-	font-size: 70px;	
-	margin:auto;
+	margin-bottom:0;
 }

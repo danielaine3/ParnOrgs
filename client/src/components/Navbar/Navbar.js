@@ -57,28 +57,28 @@ class Navbar extends Component {
   render() {
     return (
       <div>
-        {/* login modal begin */}
+        <img id="brand" src="/assets/images/Logo.jpg" />
+      
         <div
           open={this.state.open}
           onClose={this.handleClose}
           aria-labelledby="alert-dialog-title"
           aria-describedby="alert-dialog-description"
         >
-          <div id="alert-dialog-title">Login</div>
           <div>
-            <form>
+            <form className='login'>
+              <div id="loginTitle">Login</div>
               <input type="text" placeholder="Username" label="Username" name="username" value={this.state.username} onChange={this.handleInputChange}/>
               <br />
-			        <input type="text" placeholder="Password" label="Password" name="password" type="password" value={this.state.password} onChange={this.handleInputChange} />
+              <input type="text" placeholder="Password" label="Password" name="password" type="password" value={this.state.password} onChange={this.handleInputChange} />
+              <br />
+              <button onClick={this.handleClose} color="primary">
+                Cancel
+              </button>
+              <button onClick={this.submitForm} color="primary" autoFocus>
+                Login
+              </button>
             </form>
-          </div>
-          <div>
-            <button onClick={this.handleClose} color="primary">
-              Cancel
-            </button>
-            <button onClick={this.submitForm} color="primary" autoFocus>
-              Login
-            </button>
           </div>
         </div>
       </div>

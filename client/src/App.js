@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import Wrapper from "./components/Wrapper";
 import Footer from "./components/Footer";
-import RegistrationForm from './components/Users/RegistrationForm';
+import RegistrationForm from './components/Users';
 //Pages
 import NoMatch from './pages/NoMatch';
 import Registration from './pages/Registration';
