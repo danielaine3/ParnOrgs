@@ -11,32 +11,57 @@ import RegistrationForm from './components/Users/RegistrationForm';
 import NoMatch from './pages/NoMatch';
 import Registration from './pages/Registration';
 
-class App extends Component {
+class App extends React.Component {
+
+  state = {
+    currentUser: '',
+    currentPage: '',
+  };
+
+  // pass to TopNav component
+  handleLogin = (currentUser) => {
+    // console.log('in App.handleLogin, user is ', currentUser);
+    this.setState({ currentUser });
+    if (!currentUser) {
+      window.history.pushState({},"", '/');
+    }
+  }
+  // pass to Sidebar component
+  pageChange = (currentPage) => {
+    this.setState({ currentPage });
+  }
 
   render() {
+    const { classes } = this.props;
+
     return (
       <Router>
-        <Wrapper>
-          <Navbar onLogin={this.handleLogin} 
-          // currentUser={this.state.currentUser} pageTitle={this.state.currentPage} 
-          />
-            {/* {this.state.currentUser && this.state.currentUser.username ? */}
-          <Header />
-          <main>
-            <Switch>
-              <Route exact path="/" render={() => <Registration {...this.state} />} />
-              <Route component={NoMatch} />
-            </Switch>
-          </main>
-          : // user is not logged in
-          <div>
-            <Route path="/" render={() => <RegistrationForm onLogin={this.handleLogin} {...this.state} />} />
-          </div>
-          <Footer />
-        </Wrapper>
+        <React.Fragment>
+          <Wrapper>
+            <div>
+              <Navbar onLogin={this.handleLogin} currentUser={this.state.currentUser} pageTitle={this.state.currentPage} />
+              {this.state.currentUser && this.state.currentUser.username ?
+                <div>
+                  <main>
+                    <Switch>
+                      <Route exact path="/" render={() => <Registration {...this.state} />} />
+                      <Route component={NoMatch} />
+                    </Switch>
+                  </main>
+                </div>
+              : // user is not logged in
+                <div>
+                  <Route path="/" render={() => <RegistrationForm onLogin={this.handleLogin} {...this.state} />} />
+                </div>
+              }
+              <Header />
+              <Footer />
+            </div>
+          </Wrapper>
+        </React.Fragment>
       </Router>
     );
   }
 }
 
-export default <App />;
+export default (App);
