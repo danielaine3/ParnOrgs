@@ -9,41 +9,34 @@ import Footer from "./components/Footer";
 import RegistrationForm from './components/Users/RegistrationForm';
 //Pages
 import NoMatch from './pages/NoMatch';
+import Registration from './pages/Registration';
 
 class App extends Component {
-
 
   render() {
     return (
       <Router>
-      <Wrapper>
-      	<Navbar onLogin={this.handleLogin} currentUser={this.state.currentUser} pageTitle={this.state.currentPage} />
-          {this.state.currentUser && this.state.currentUser.username ?
-        <div>
+        <Wrapper>
+          <Navbar onLogin={this.handleLogin} 
+          // currentUser={this.state.currentUser} pageTitle={this.state.currentPage} 
+          />
+            {/* {this.state.currentUser && this.state.currentUser.username ? */}
           <Header />
           <main>
-            <div />
             <Switch>
-              <Route exact path="/" render={() => <Journal {...this.state} />} />
+              <Route exact path="/" render={() => <Registration {...this.state} />} />
               <Route component={NoMatch} />
             </Switch>
           </main>
-          </div>
           : // user is not logged in
           <div>
-            <div />
             <Route path="/" render={() => <RegistrationForm onLogin={this.handleLogin} {...this.state} />} />
           </div>
-  }
-
-
-
-        
-        <Footer />
-      </Wrapper>
+          <Footer />
+        </Wrapper>
       </Router>
     );
   }
 }
 
-export default App;
+export default <App />;
