@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import API from '../../utils/API';
+import "./RegistrationForm.css";
 // import util from '../../utils/util';
 
 class RegistrationForm extends Component {
@@ -67,7 +68,6 @@ class RegistrationForm extends Component {
         // send the new user data up to the App.js component
         console.log('newUser: ', newUser);
         this.setState({
-          // currentUser: newUser,
           username: '',
           email: '',
           password: '',
@@ -100,30 +100,29 @@ class RegistrationForm extends Component {
       <div>
         <div>Registration Form</div>
         <form>
-          <input label="First Name" placeholder="First Name" name="firstname" type="text" required value={this.state.firstname} onChange={this.handleInputChange} />
-          <input label="Last Name" placeholder="Last Name" name="lastname" type="text" required value={this.state.lastname} onChange={this.handleInputChange} />
+          Name:<br />
+          <input label="First Name" placeholder="First" name="firstname" type="text" required value={this.state.firstname} onChange={this.handleInputChange} />
+          <input label="Last Name" placeholder="Last" name="lastname" type="text" required value={this.state.lastname} onChange={this.handleInputChange} />
           <br />
+          Email:<br />
           <input label="Email" placeholder="Email" name="email" type="text" required value={this.state.email} onChange={this.handleInputChange} />
           <br />
+          Username:<br />
           <input label="Username" placeholder="Username" name="username" type="text" required value={this.state.username} onChange={this.handleInputChange} />
           <br />
+          Password:<br />
           <input label="Password" placeholder="Password" name="password" type="password" required value={this.state.password} onChange={this.handleInputChange} />
-          <input label="Confirm Password" placeholder="Confirm Password" name="passwordConfirm" required type="password" value={this.state.passwordConfirm} onChange={this.handleInputChange} />
+          <input label="Confirm Password" placeholder="Confirm Password" name="passwordConfirm" type="password" required value={this.state.passwordConfirm} onChange={this.handleInputChange} />
           <br />
-          <button variant="raised" color="primary" onClick={this.submitForm}>Register</button>
+          <button onClick={this.submitForm}>Register</button>
         </form>
 
         {/* login modal begin */}
-        <div
-          open={this.state.open}
-          onClose={this.errDialogClose}
-          aria-labelledby="alert-dialog-title"
-          aria-describedby="alert-dialog-description"
-        >
+        <div className='dialogBox' open={this.state.open} onClose={this.errDialogClose}>
           <div id="alert-dialog-title">Error</div>
-            <div variant="headline">{this.state.error}</div>
+            <div>{this.state.error}</div>
             <div>
-              <button onClick={this.errDialogClose} color="primary">
+              <button onClick={this.errDialogClose}>
                 OK
               </button>
             </div>

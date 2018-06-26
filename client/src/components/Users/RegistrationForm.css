@@ -1,0 +1,15 @@
+body {
+    font-family: sans-serif;
+}
+
+input {
+    line-height: 1.5;
+    margin: 5px;
+    width: 300px;
+
+}
+
+button {
+    font-size: 14px;
+    margin: 5px;
+}

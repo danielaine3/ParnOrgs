@@ -67,23 +67,9 @@ class Navbar extends Component {
           <div id="alert-dialog-title">Login</div>
           <div>
             <form>
-              <input
-				type="text"
-				placeholder="Username"
-                label="Username"
-                name="username"
-                value={this.state.username}
-                onChange={this.handleInputChange}
-              />
-			  <input	
-				type="text"
-				placeholder="Password"
-                label="Password"
-                name="password"
-                type="password"
-                value={this.state.password}
-                onChange={this.handleInputChange}
-              />
+              <input type="text" placeholder="Username" label="Username" name="username" value={this.state.username} onChange={this.handleInputChange}/>
+              <br />
+			        <input type="text" placeholder="Password" label="Password" name="password" type="password" value={this.state.password} onChange={this.handleInputChange} />
             </form>
           </div>
           <div>
