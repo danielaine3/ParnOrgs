@@ -40,6 +40,7 @@ class App extends React.Component {
           <Wrapper>
             <div>
               <Navbar onLogin={this.handleLogin} currentUser={this.state.currentUser} pageTitle={this.state.currentPage} />
+              <Header />
               {this.state.currentUser && this.state.currentUser.username ?
                 <div>
                   <main>
@@ -54,7 +55,6 @@ class App extends React.Component {
                   <Route path="/" render={() => <RegistrationForm onLogin={this.handleLogin} {...this.state} />} />
                 </div>
               }
-              <Header />
               <Footer />
             </div>
           </Wrapper>
