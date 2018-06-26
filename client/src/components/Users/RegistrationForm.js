@@ -1,74 +1,15 @@
 import React, { Component } from 'react';
-// Material UI
-// import { Button, TextField, Select, Typography, } from 'material-ui';
-// import Input, { InputLabel } from 'material-ui/Input';
-// import { MenuItem } from 'material-ui/Menu';
-// import { FormControl, FormHelperText } from 'material-ui/Form';
-// import Dialog, {
-//   DialogActions,
-//   DialogContent,
-//   DialogTitle,
-// } from 'material-ui/Dialog';
-// import Paper from 'material-ui/Paper';
-// import Grid from 'material-ui/Grid';
-// import { withStyles } from 'material-ui/styles';
-// import Divider from 'material-ui/Divider';
-
 import API from '../../utils/API';
 // import util from '../../utils/util';
 
-// const styles = theme => ({
-//   root: {
-//     flexGrow: 1,
-//     padding: theme.spacing.unit * 4,
-//   },
-//   textField: {
-//     marginLeft: theme.spacing.unit,
-//     marginRight: theme.spacing.unit,
-//     width: 200,
-//   },
-//   paper: {
-//     padding: theme.spacing.unit * 2,
-//     color: theme.palette.text.secondary,
-//   },
-//   divider: {
-//     marginTop: 20,
-//     marginBottom: 20,
-//   },
-//   registerButton: {
-//     display: 'flex',
-//     marginLeft: 'auto',
-//   }
-// });
-
-
 class RegistrationForm extends Component {
   state = {
-    // currentUser: '',
     username: '',
     email: '',
     password: '',
     passwordConfirm: '',
-    fullname: '',
-    // homeLocationCity: '',
-    // homeLocationCountry: '',
-    // homeLocationCountryCode: '',
-    // homeLocationCurrencyCode: '',
-    // homeLocationTimezone: '',
-    // homeLocationLatitude: '',
-    // homeLocationLongitude: '',
-    // internLocationCity: '',
-    // internLocationCountry: '',
-    // internLocationCountryCode: '',
-    // internLocationCurrencyCode: '',
-    // internLocationTimezone: '',
-    // internLocationLatitude: '',
-    // internLocationLongitude: '',
-    // preferredUnits: 'imperial',
-    // openWeatherCityCode: '',
-    // countryCodeData: {},
-    // countryCurrencyCodeData: {},
-    // countryNameSuggestions: [],
+    firstname: '',
+    lastname: '',
     axiosCancelToken: null,
     error: '',
     open: false,
@@ -78,50 +19,16 @@ class RegistrationForm extends Component {
   //   this.loadCountryData();
   // }
 
-  // componentWillUnmount() {
-  //   if (this.state.axiosCancelToken) {
-  //     this.state.axiosCancelToken.cancel();
-  //   }
-  // }
+  componentWillUnmount() {
+    if (this.state.axiosCancelToken) {
+      this.state.axiosCancelToken.cancel();
+    }
+  }
 
   // open login modal
   errDialogOpen = () => { this.setState({ open: true }); };
   // close login modal
   errDialogClose = () => { this.setState({ open: false }); };
-
-  // loadCountryData() {
-  //   const axiosReference = API.getAllCountryData();
-  //   this.setState({ axiosCancelToken: axiosReference });
-  //   axiosReference
-  //     .promise
-  //     .then((response) => {
-  //       // console.log(response);
-  //       const countryCodeData = response.data.countryCodes || {};
-  //       const countryNameSuggestions = Object.keys(countryCodeData)
-  //         .map(suggestion => ({
-  //           value: suggestion,
-  //           label: suggestion,
-  //         }));
-  //       // console.log('countryCodeData', countryCodeData, 'suggestions', countryNameSuggestions);
-  //       this.setState({
-  //         countryNameSuggestions,
-  //         countryCodeData,
-  //         countryCurrencyCodeData: response.data.countryCurrencyCodes
-  //       });
-  //     })
-  //     .catch((err) => {
-  //       // Error on request for country data. This could just be due to the request being canceled.
-  //       // print is it is due to something other than the request being canceled
-  //       if (err.isCanceled) {
-  //         console.log('Axios request in RegistrationForm for getting country data canceled. This is normal');
-  //       } else {
-  //         this.setState({ error: 'Error on request for country data' });
-  //         // launch error dialog
-  //         this.errDialogOpen();
-  //         console.error(this.setState.error, err);
-  //       }
-  //     });
-  // }
 
   sendRegistrationData = () => {
     console.log('state: ', this.state);
@@ -138,7 +45,8 @@ class RegistrationForm extends Component {
     } else if (
       this.state.username.length < 1 ||
       this.state.email.length < 1 ||
-      this.state.fullname.length < 1
+      this.state.firstname.length < 1 ||
+      this.state.lastname.length < 1
     ) {
       this.setState({ error: 'One or more missing required fields' });
       // launch error dialog
@@ -149,9 +57,10 @@ class RegistrationForm extends Component {
       username: this.state.username,
       email: this.state.email,
       password: this.state.password,
-      fullname: this.state.fullname,
-      
+      firstname: this.state.firstname,
+      lastname: this.state.lastname,
     };
+
     return API.registerUser(data)
       .then((response) => {
         const newUser = response.data.user;
@@ -163,7 +72,8 @@ class RegistrationForm extends Component {
           email: '',
           password: '',
           passwordConfirm: '',
-          fullname: '',
+          firstname: '',
+          lastname: '',
         }, ((typeof this.props.onLogin === 'function') && this.props.onLogin(newUser)));
       })
       .catch(err => console.log('error on registration', err));
@@ -211,14 +121,12 @@ class RegistrationForm extends Component {
           aria-describedby="alert-dialog-description"
         >
           <div id="alert-dialog-title">Error</div>
-          <div>
             <div variant="headline">{this.state.error}</div>
-          </div>
-          <div>
-            <button onClick={this.errDialogClose} color="primary">
-              OK
-            </button>
-          </div>
+            <div>
+              <button onClick={this.errDialogClose} color="primary">
+                OK
+              </button>
+            </div>
         </div>
       </div>
     );
