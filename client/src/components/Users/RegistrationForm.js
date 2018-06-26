@@ -74,54 +74,54 @@ class RegistrationForm extends Component {
     open: false,
   }
 
-  componentDidMount() {
-    this.loadCountryData();
-  }
+  // componentDidMount() {
+  //   this.loadCountryData();
+  // }
 
-  componentWillUnmount() {
-    if (this.state.axiosCancelToken) {
-      this.state.axiosCancelToken.cancel();
-    }
-  }
+  // componentWillUnmount() {
+  //   if (this.state.axiosCancelToken) {
+  //     this.state.axiosCancelToken.cancel();
+  //   }
+  // }
 
   // open login modal
   errDialogOpen = () => { this.setState({ open: true }); };
   // close login modal
   errDialogClose = () => { this.setState({ open: false }); };
 
-  loadCountryData() {
-    const axiosReference = API.getAllCountryData();
-    this.setState({ axiosCancelToken: axiosReference });
-    axiosReference
-      .promise
-      .then((response) => {
-        // console.log(response);
-        const countryCodeData = response.data.countryCodes || {};
-        const countryNameSuggestions = Object.keys(countryCodeData)
-          .map(suggestion => ({
-            value: suggestion,
-            label: suggestion,
-          }));
-        // console.log('countryCodeData', countryCodeData, 'suggestions', countryNameSuggestions);
-        this.setState({
-          countryNameSuggestions,
-          countryCodeData,
-          countryCurrencyCodeData: response.data.countryCurrencyCodes
-        });
-      })
-      .catch((err) => {
-        // Error on request for country data. This could just be due to the request being canceled.
-        // print is it is due to something other than the request being canceled
-        if (err.isCanceled) {
-          console.log('Axios request in RegistrationForm for getting country data canceled. This is normal');
-        } else {
-          this.setState({ error: 'Error on request for country data' });
-          // launch error dialog
-          this.errDialogOpen();
-          console.error(this.setState.error, err);
-        }
-      });
-  }
+  // loadCountryData() {
+  //   const axiosReference = API.getAllCountryData();
+  //   this.setState({ axiosCancelToken: axiosReference });
+  //   axiosReference
+  //     .promise
+  //     .then((response) => {
+  //       // console.log(response);
+  //       const countryCodeData = response.data.countryCodes || {};
+  //       const countryNameSuggestions = Object.keys(countryCodeData)
+  //         .map(suggestion => ({
+  //           value: suggestion,
+  //           label: suggestion,
+  //         }));
+  //       // console.log('countryCodeData', countryCodeData, 'suggestions', countryNameSuggestions);
+  //       this.setState({
+  //         countryNameSuggestions,
+  //         countryCodeData,
+  //         countryCurrencyCodeData: response.data.countryCurrencyCodes
+  //       });
+  //     })
+  //     .catch((err) => {
+  //       // Error on request for country data. This could just be due to the request being canceled.
+  //       // print is it is due to something other than the request being canceled
+  //       if (err.isCanceled) {
+  //         console.log('Axios request in RegistrationForm for getting country data canceled. This is normal');
+  //       } else {
+  //         this.setState({ error: 'Error on request for country data' });
+  //         // launch error dialog
+  //         this.errDialogOpen();
+  //         console.error(this.setState.error, err);
+  //       }
+  //     });
+  // }
 
   sendRegistrationData = () => {
     console.log('state: ', this.state);
@@ -190,14 +190,16 @@ class RegistrationForm extends Component {
       <div>
         <div>Registration Form</div>
         <form>
-          <input label="Username" name="username" type="text" required value={this.state.username} onChange={this.handleInputChange} />
-          {/* <br /> */}
-          <input label="Email" name="email" type="text" required value={this.state.email} onChange={this.handleInputChange} />
-          {/* <br /> */}
-          <input label="Password" name="password" type="password" required value={this.state.password} onChange={this.handleInputChange} />
-          <input label="Confirm Password" name="passwordConfirm" required type="password" value={this.state.passwordConfirm} onChange={this.handleInputChange} />
-          <input label="Full Name" name="fullname" type="text" required value={this.state.fullname} onChange={this.handleInputChange} />
-
+          <input label="First Name" placeholder="First Name" name="firstname" type="text" required value={this.state.firstname} onChange={this.handleInputChange} />
+          <input label="Last Name" placeholder="Last Name" name="lastname" type="text" required value={this.state.lastname} onChange={this.handleInputChange} />
+          <br />
+          <input label="Email" placeholder="Email" name="email" type="text" required value={this.state.email} onChange={this.handleInputChange} />
+          <br />
+          <input label="Username" placeholder="Username" name="username" type="text" required value={this.state.username} onChange={this.handleInputChange} />
+          <br />
+          <input label="Password" placeholder="Password" name="password" type="password" required value={this.state.password} onChange={this.handleInputChange} />
+          <input label="Confirm Password" placeholder="Confirm Password" name="passwordConfirm" required type="password" value={this.state.passwordConfirm} onChange={this.handleInputChange} />
+          <br />
           <button variant="raised" color="primary" onClick={this.submitForm}>Register</button>
         </form>
 
