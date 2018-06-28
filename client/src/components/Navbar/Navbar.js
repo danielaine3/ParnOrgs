@@ -56,9 +56,8 @@ class Navbar extends Component {
 
   render() {
     return (
-      <div>
+      <div className="navbarContainer">
         <img id="brand" src="/assets/images/Logo.jpg" />
-      
         <div
           open={this.state.open}
           onClose={this.handleClose}
