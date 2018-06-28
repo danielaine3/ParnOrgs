@@ -4,6 +4,7 @@ body {
 
 .formContainer {
     margin-top: -300px;
+    margin-left: 10px;
 }
 input {
     line-height: 1.5;
