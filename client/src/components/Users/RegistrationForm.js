@@ -97,7 +97,7 @@ class RegistrationForm extends Component {
   render() {
     // console.log('state upon rendering: ', this.state);
     return (
-      <div>
+      <div className="formContainer">
         <div>Registration Form</div>
         <form>
           Name:<br />
