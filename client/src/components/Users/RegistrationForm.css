@@ -3,12 +3,26 @@ body {
 }
 
 .formContainer {
-    margin-top: -300px;
+    margin-top: -400px;
     margin-left: 10px;
 }
+
+#formTitle {
+    font-family:'Open Sans Condensed', sans-serif;
+    font-size:25px;
+    color:#FFFFFF;
+}
+
+p {
+    font-family:'Open Sans Condensed', sans-serif;
+    font-size:20px;
+    color:#FFFFFF;
+    margin-bottom:0;
+}
+
 input {
     line-height: 1.5;
-    margin: 5px;
+    margin:2px;
     width: 300px;
 
 }

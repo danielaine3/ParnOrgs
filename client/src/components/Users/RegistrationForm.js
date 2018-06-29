@@ -98,19 +98,19 @@ class RegistrationForm extends Component {
     // console.log('state upon rendering: ', this.state);
     return (
       <div className="formContainer">
-        <div>Registration Form</div>
+        <div id="formTitle">Registration Form</div>
         <form>
-          Name:<br />
+          <p>Name:</p>
           <input label="First Name" placeholder="First" name="firstname" type="text" required value={this.state.firstname} onChange={this.handleInputChange} />
           <input label="Last Name" placeholder="Last" name="lastname" type="text" required value={this.state.lastname} onChange={this.handleInputChange} />
           <br />
-          Email:<br />
+          <p>Email:</p>
           <input label="Email" placeholder="Email" name="email" type="text" required value={this.state.email} onChange={this.handleInputChange} />
           <br />
-          Username:<br />
+          <p>Username:</p>
           <input label="Username" placeholder="Username" name="username" type="text" required value={this.state.username} onChange={this.handleInputChange} />
           <br />
-          Password:<br />
+          <p>Password:</p>
           <input label="Password" placeholder="Password" name="password" type="password" required value={this.state.password} onChange={this.handleInputChange} />
           <input label="Confirm Password" placeholder="Confirm Password" name="passwordConfirm" type="password" required value={this.state.passwordConfirm} onChange={this.handleInputChange} />
           <br />
