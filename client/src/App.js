@@ -53,6 +53,7 @@ class App extends React.Component {
               : // user is not logged in
                 <div>
                   <Route path="/" render={() => <RegistrationForm onLogin={this.handleLogin} {...this.state} />} />
+                  <Route path="/confirmation" render={() => <Confirmation {...this.state} />} />
                 </div>
               }
               <Footer />
