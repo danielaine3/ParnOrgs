@@ -10,6 +10,7 @@ import RegistrationForm from './components/Users';
 //Pages
 import NoMatch from './pages/NoMatch';
 import Registration from './pages/Registration';
+import Signups from './pages/Signups';
 
 class App extends React.Component {
 
@@ -45,15 +46,15 @@ class App extends React.Component {
                 <div>
                   <main>
                     <Switch>
-                      <Route exact path="/" render={() => <Registration {...this.state} />} />
+                      <Route exact path="/" render={() => <Signups {...this.state} />} />
+                      <Route path="/Signups" render={() => <Signups {...this.state} />} />
                       <Route component={NoMatch} />
                     </Switch>
                   </main>
                 </div>
               : // user is not logged in
                 <div>
-                  <Route path="/" render={() => <RegistrationForm onLogin={this.handleLogin} {...this.state} />} />
-                  <Route path="/confirmation" render={() => <Confirmation {...this.state} />} />
+                  <Route path="/" render={() => <Registration onLogin={this.handleLogin} {...this.state} />} />
                 </div>
               }
               <Footer />
