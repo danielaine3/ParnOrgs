@@ -38,28 +38,28 @@ class App extends React.Component {
     return (
       <Router>
         <React.Fragment>
-          <Wrapper>
-            <div>
-              <Navbar onLogin={this.handleLogin} currentUser={this.state.currentUser} pageTitle={this.state.currentPage} />
-              <Header />
-              {this.state.currentUser && this.state.currentUser.username ?
-                <div>
-                  <main>
-                    <Switch>
-                      <Route exact path="/" render={() => <Signups {...this.state} />} />
-                      <Route path="/Signups" render={() => <Signups {...this.state} />} />
-                      <Route component={NoMatch} />
-                    </Switch>
-                  </main>
-                </div>
-              : // user is not logged in
-                <div>
-                  <Route path="/" render={() => <Registration onLogin={this.handleLogin} {...this.state} />} />
-                </div>
-              }
-              <Footer />
-            </div>
-          </Wrapper>
+            <Wrapper>
+              <div>
+                <Navbar onLogin={this.handleLogin} currentUser={this.state.currentUser} pageTitle={this.state.currentPage} />
+                <Header />
+                {this.state.currentUser && this.state.currentUser.username ?
+                  <div>
+                    <main>
+                      <Switch>
+                        <Route exact path="/" render={() => <Signups {...this.state} />} />
+                        <Route exact path="/Signups" render={() => <Signups {...this.state} />} />
+                        <Route component={NoMatch} />
+                      </Switch>
+                    </main>
+                  </div>
+                : // user is not logged in
+                  <div>
+                    <Route exact path="/" render={() => <Registration onLogin={this.handleLogin} {...this.state} />} />
+                  </div>
+                }
+                <Footer />
+              </div>
+            </Wrapper>
         </React.Fragment>
       </Router>
     );
