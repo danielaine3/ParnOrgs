@@ -47,8 +47,9 @@ class Signups extends Component {
           <p>Scholar's Grade:</p>
           <input label="Grade" placeholder="Grade" name="Grade" type="text" required value={this.state.grade} onChange={this.handleInputChange} />
           <br />
-          <p>Username:</p>
-          <input label="Username" placeholder="Username" name="username" type="text" required value={this.state.username} onChange={this.handleInputChange} />
+          <p>Program:</p>
+          <input label="Animus" name="Animus" type="checkbox" required value={this.state.animus} onChange={this.handleInputChange} />
+          <input label="Accendo" name="Accendo" type="checkbox" required value={this.state.accendo} onChange={this.handleInputChange} />
           <br />
           <button onClick={this.submitForm}>Signup</button>
         </form>
