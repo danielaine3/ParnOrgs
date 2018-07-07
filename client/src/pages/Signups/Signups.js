@@ -57,6 +57,7 @@ class Signups extends Component {
           <input label="Wednesday" name="Wednesday" type="checkbox" required value={this.state.wednesday} onChange={this.handleInputChange} />
           <input label="Thursday" name="Thursday" type="checkbox" required value={this.state.thursday} onChange={this.handleInputChange} />
           <input label="Friday" name="Friday" type="checkbox" required value={this.state.Friday} onChange={this.handleInputChange} />
+          <input label="All Week" name="allWeek" type="checkbox" require value={this.state.allWeek} onChange={this.handleInputChange} />
           <button onClick={this.submitForm}>Signup</button>
         </form>
       </div>
