@@ -9,7 +9,7 @@ import Footer from "./components/Footer";
 import RegistrationForm from './components/Users';
 //Pages
 import NoMatch from './pages/NoMatch';
-import Registration from './pages/Registration';
+// import Registration from './pages/Registration';
 import Signups from './pages/Signups';
 
 class App extends React.Component {
@@ -54,7 +54,7 @@ class App extends React.Component {
                   </div>
                 : // user is not logged in
                   <div>
-                    <Route exact path="/" render={() => <Registration onLogin={this.handleLogin} {...this.state} />} />
+                    <Route exact path="/" render={() => <RegistrationForm onLogin={this.handleLogin} {...this.state} />} />
                   </div>
                 }
                 <Footer />
