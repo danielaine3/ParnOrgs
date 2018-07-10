@@ -1,0 +1,33 @@
+body {
+    font-family: sans-serif;
+}
+
+.formContainer {
+    margin-top: -400px;
+    margin-left: 10px;
+}
+
+#formTitle {
+    font-family:'Open Sans Condensed', sans-serif;
+    font-size:25px;
+    color:#FFFFFF;
+}
+
+p {
+    font-family:'Open Sans Condensed', sans-serif;
+    font-size:20px;
+    color:#FFFFFF;
+    margin-bottom:0;
+}
+
+input {
+    line-height: 1.5;
+    margin:2px;
+    width: 300px;
+
+}
+
+button {
+    font-size: 14px;
+    margin: 5px;
+}
