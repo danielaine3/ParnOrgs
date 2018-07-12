@@ -118,7 +118,7 @@ class RegistrationForm extends Component {
         </form>
 
         {/* login modal begin */}
-        <div className='dialogBox' open={this.state.open} onClose={this.errDialogClose}>
+        {/* <div className='dialogBox' open={this.state.open} onClose={this.errDialogClose}>
           <div id="alert-dialog-title">Error</div>
             <div>{this.state.error}</div>
             <div>
@@ -126,7 +126,7 @@ class RegistrationForm extends Component {
                 OK
               </button>
             </div>
-        </div>
+        </div> */}
       </div>
     );
   }
