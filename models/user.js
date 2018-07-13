@@ -23,30 +23,22 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now,
   },
-  scholarName: {
-    type: String,
-    required: 'Scholar name is required',
-  },
-  scholarGrade: {
-    type: String,
-    required: 'Scholar Grade is required',
-  },
 
   // `chapterRef` is an object that stores a Chapter id
   // The ref property links the ObjectId to the Chapter model
   // This allows us to populate the User with an associated Chapter
-//   chapterRef: [
-//     {
-//       type: Schema.Types.ObjectId,
-//       ref: 'Chapter',
-//     },
-//   ],
-//   needsRef: [
-//     {
-//       type: Schema.Types.ObjectId,
-//       ref: 'Needs',
-//     },
-//   ],
+  scholarRef: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Scholar',
+    },
+  ],
+  DatesRef: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Dates',
+    },
+  ],
 //   expRef: [
 //     {
 //       type: Schema.Types.ObjectId,
@@ -76,9 +68,9 @@ const User = mongoose.model('User', UserSchema);
 
 passport.deserializeUser((user, done) => {
   User.findById(user._id)
-    .populate({ path: 'expRef', options: { sort: { expDate: -1 } } })
-    .populate('needsRef')
-    .populate('chapterRef')
+    // .populate({ path: 'expRef', options: { sort: { expDate: -1 } } })
+    .populate('scholarRef')
+    .populate('datesRef')
     .exec((err, data) => {
       if (err) {
         console.log('Error when deserializes user', err);

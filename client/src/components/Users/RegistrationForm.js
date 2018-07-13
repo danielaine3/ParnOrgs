@@ -114,12 +114,6 @@ class RegistrationForm extends Component {
           <input label="Password" placeholder="Password" name="password" type="password" required value={this.state.password} onChange={this.handleInputChange} />
           <input label="Confirm Password" placeholder="Confirm Password" name="passwordConfirm" type="password" required value={this.state.passwordConfirm} onChange={this.handleInputChange} />
           <br />
-          <p>Scholar:</p>
-          <input label="ScholarFirst" placeholder="First Name" name="scholarFirst" type="text" required value={this.state.scholarFirst} onChange={this.handleInputChange} />
-          <input label="Scholarlast" placeholder="Last Name" name="scholarLast" type="text" required value={this.state.scholarLast} onChange={this.handleInputChange} />
-          <br />
-          <input label="ScholarGrade" placeholder="Grade" name="scholargrade" type="text" required value={this.state.scholarGrade} onChange={this.handleInputChange} />
-          <br />
           <button onClick={this.submitForm}>Register</button>
         </form>
 
