@@ -25,8 +25,6 @@ const userController = {
       username: req.body.username,
       email: req.body.email,
       fullname: req.body.fullname,
-      scholarName: req.body.scholarName,
-      scholarGrade: req.body.scholarGrade,
 
     };
     console.log('data on user registration: ', data);
