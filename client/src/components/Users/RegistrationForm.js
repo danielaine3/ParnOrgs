@@ -5,12 +5,12 @@ import "./RegistrationForm.css";
 
 class RegistrationForm extends Component {
   state = {
-    username: '',
-    email: '',
-    password: '',
-    passwordConfirm: '',
     firstname: '',
     lastname: '',
+    email: '',
+    username: '',
+    password: '',
+    passwordConfirm: '',
     axiosCancelToken: null,
     error: '',
     open: false,
@@ -55,11 +55,11 @@ class RegistrationForm extends Component {
       return console.error(this.state.error);
     }
     const data = {
-      username: this.state.username,
-      email: this.state.email,
-      password: this.state.password,
       firstname: this.state.firstname,
       lastname: this.state.lastname,
+      email: this.state.email,
+      username: this.state.username, 
+      password: this.state.password,
     };
 
     return API.registerUser(data)
@@ -68,12 +68,12 @@ class RegistrationForm extends Component {
         // send the new user data up to the App.js component
         console.log('newUser: ', newUser);
         this.setState({
-          username: '',
-          email: '',
-          password: '',
-          passwordConfirm: '',
           firstname: '',
           lastname: '',
+          email: '',          
+          username: '',
+          password: '',
+          passwordConfirm: '',
         }, ((typeof this.props.onLogin === 'function') && this.props.onLogin(newUser)));
       })
       .catch(err => console.log('error on registration', err));
