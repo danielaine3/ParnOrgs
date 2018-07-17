@@ -57,7 +57,7 @@ class Navbar extends Component {
   render() {
     return (
       <div className="navbarContainer">
-        <img id="brand" src="/assets/images/Logo.jpg" />
+        <img id="brand" alt="Parnassus Logo" src="/assets/images/Logo.jpg" />
         <div
           open={this.state.open}
           onClose={this.handleClose}
@@ -69,7 +69,7 @@ class Navbar extends Component {
               <div id="loginTitle">Login</div>
               <input type="text" placeholder="Username" label="Username" name="username" value={this.state.username} onChange={this.handleInputChange}/>
               <br />
-              <input type="text" placeholder="Password" label="Password" name="password" type="password" value={this.state.password} onChange={this.handleInputChange} />
+              <input placeholder="Password" label="Password" name="password" type="password" value={this.state.password} onChange={this.handleInputChange} />
               <br />
               <button onClick={this.handleClose} color="primary">
                 Cancel
