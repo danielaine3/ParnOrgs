@@ -6,18 +6,21 @@ const { Schema } = mongoose;
 
 const UserSchema = new Schema({
   // Note: actual password won't be stored, only salted hash of password
-  username: {
+   firstName: {
     type: String,
-    trim: true,
-    required: 'Username is required',
+  },
+  lastName:{
+    type:String,
   },
   email: {
     type: String,
     unique: true,
     match: [/.+@.+\..+/, 'Please enter a valid e-mail address'],
   },
-  fullname: {
+  username: {
     type: String,
+    trim: true,
+    required: 'Username is required',
   },
   userCreated: {
     type: Date,
