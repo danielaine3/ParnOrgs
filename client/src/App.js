@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 //Components
@@ -11,6 +11,8 @@ import RegistrationForm from './components/Users';
 import NoMatch from './pages/NoMatch';
 // import Registration from './pages/Registration';
 import Signups from './pages/Signups';
+
+if (process.env.NODE_ENV !== 'production') require('dotenv').config({slient:true});
 
 class App extends React.Component {
 
