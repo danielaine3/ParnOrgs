@@ -36,7 +36,7 @@ const UserSchema = new Schema({
       ref: 'Scholar',
     },
   ],
-  DatesRef: [
+  datesRef: [
     {
       type: Schema.Types.ObjectId,
       ref: 'Dates',
