@@ -24,7 +24,8 @@ const userController = {
     const data = {
       username: req.body.username,
       email: req.body.email,
-      fullname: req.body.fullname,
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
 
     };
     console.log('data on user registration: ', data);
@@ -47,7 +48,7 @@ const userController = {
     // res.redirect('/');
       User.findById(req.user._id)
         // .populate({ path: 'expRef', options: { sort: { expDate: -1 } } })
-        // .populate('needsRef')
+        .populate('scholarRef')
         // .populate('chapterRef')
         .then(result => res.json({ user: result }));
     });
