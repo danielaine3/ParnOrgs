@@ -55,6 +55,7 @@ class Navbar extends Component {
   }
 
   render() {
+    const { classes } = this.props;
     return (
       <div className="navbarContainer">
         <img id="brand" alt="Parnassus Logo" src="/assets/images/Logo.jpg" />

@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
-// const routes = require('./routes');
+const routes = require('./routes');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
@@ -33,16 +33,16 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // configure passport
-// const User = require('./models/user');
+const User = require('./models/user');
 
-// passport.use(new LocalStrategy(User.authenticate()));
-// passport.serializeUser(User.serializeUser());
-// passport.deserializeUser(User.deserializeUser());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 // Serve up static assets
 app.use(express.static('client/build'));
 // Add routes, both API and view
-// app.use(routes);
+app.use(routes);
 
 // Start the API server
 app.listen(PORT, () => {
