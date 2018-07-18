@@ -23,5 +23,5 @@ export default {
   loginUser: data => axios.post('/api/users/login', data),
   logoutUser: () => axios.get('/api/users/logout'),
   getCurrentUser: () => axios.get('/api/users/getCurrentUser'),
-  updateUser: data => axios.put('/api/users/${data.id}', data),
+  updateUser: data => axios.put(`/api/users/${data.id}`, data),
 };
