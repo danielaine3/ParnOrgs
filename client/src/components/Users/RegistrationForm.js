@@ -61,7 +61,6 @@ class RegistrationForm extends Component {
       username: this.state.username, 
       password: this.state.password,
     };
-
     return API.registerUser(data)
       .then((response) => {
         const newUser = response.data.user;
