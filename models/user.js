@@ -72,8 +72,8 @@ const User = mongoose.model('User', UserSchema);
 passport.deserializeUser((user, done) => {
   User.findById(user._id)
     // .populate({ path: 'expRef', options: { sort: { expDate: -1 } } })
-    .populate('scholarRef')
-    .populate('datesRef')
+    // .populate('scholarRef')
+    // .populate('datesRef')
     .exec((err, data) => {
       if (err) {
         console.log('Error when deserializes user', err);
