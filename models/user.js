@@ -36,10 +36,10 @@ const UserSchema = new Schema({
       ref: 'Scholar',
     },
   ],
-  datesRef: [
+  dateRef: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Dates',
+      ref: 'Date',
     },
   ],
 //   expRef: [
