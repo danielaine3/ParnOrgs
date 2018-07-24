@@ -33,6 +33,7 @@ class RegistrationForm extends Component {
 
   sendRegistrationData = () => {
     console.log('state: ', this.state);
+    console.log("Registration made it here.");
     if (this.state.password !== this.state.passwordConfirm) {
       this.setState({ error: 'Password and Password Confirmation do not match' });
       // launch error dialog
@@ -54,6 +55,7 @@ class RegistrationForm extends Component {
       this.errDialogOpen();
       return console.error(this.state.error);
     }
+    console.log("HERE!");
     const data = {
       firstname: this.state.firstname,
       lastname: this.state.lastname,
@@ -61,6 +63,7 @@ class RegistrationForm extends Component {
       username: this.state.username, 
       password: this.state.password,
     };
+    console.log(data);
     return API.registerUser(data)
       .then((response) => {
         const newUser = response.data.user;

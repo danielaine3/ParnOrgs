@@ -21,6 +21,7 @@ const userController = {
     return res.status(401).json({ user: null });
   },
   doRegister(req, res) {
+    console.log("registration made it here.");
     const data = {
       username: req.body.username,
       email: req.body.email,
