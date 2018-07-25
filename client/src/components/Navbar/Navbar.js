@@ -34,6 +34,7 @@ class Navbar extends Component {
       username: this.state.username,
       password: this.state.password,
     };
+    console.log(data);
     // attempt login
     API.loginUser(data)
       .then((response) => {
