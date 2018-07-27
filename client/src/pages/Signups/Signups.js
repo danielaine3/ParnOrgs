@@ -52,12 +52,12 @@ class Signups extends Component {
           <input label="Accendo" name="Accendo" type="checkbox" required value={this.state.accendo} onChange={this.handleInputChange} />
           <br />
           <p>Days</p>
-          <input label="Monday" name="Monday" type="checkbox" required value={this.state.monday} onChange={this.handleInputChange} />
-          <input label="Tuesday" name="Tuesday" type="checkbox" required value={this.state.tuesday} onChange={this.handleInputChange} />
-          <input label="Wednesday" name="Wednesday" type="checkbox" required value={this.state.wednesday} onChange={this.handleInputChange} />
-          <input label="Thursday" name="Thursday" type="checkbox" required value={this.state.thursday} onChange={this.handleInputChange} />
-          <input label="Friday" name="Friday" type="checkbox" required value={this.state.friday} onChange={this.handleInputChange} />
-          <input label="All Week" name="allWeek" type="checkbox" require value={this.state.allWeek} onChange={this.handleInputChange} />
+          <input label="Monday" name="Monday" type="checkbox" required value={this.state.monday} onChange={this.handleInputChange}>Monday </input>
+          <input label="Tuesday" name="Tuesday" type="checkbox" required value={this.state.tuesday} onChange={this.handleInputChange}>Tuesday</input>
+          <input label="Wednesday" name="Wednesday" type="checkbox" required value={this.state.wednesday} onChange={this.handleInputChange}>Wednesday </input>
+          <input label="Thursday" name="Thursday" type="checkbox" required value={this.state.thursday} onChange={this.handleInputChange}>Thursday </input>
+          <input label="Friday" name="Friday" type="checkbox" required value={this.state.friday} onChange={this.handleInputChange}>Friday </input>
+          <input label="All Week" name="allWeek" type="checkbox" require value={this.state.allWeek} onChange={this.handleInputChange}>All Week </input>
           <button onClick={this.submitForm}>Signup</button>
         </form>
       </div>
