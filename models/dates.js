@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 
 const dateSchema = new Schema({
   date: {
-    type: date,
+    type: 'date',
   },
   user: {
     type: Schema.Types.ObjectId, ref: 'user'
