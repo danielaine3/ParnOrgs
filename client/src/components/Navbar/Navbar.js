@@ -73,11 +73,11 @@ class Navbar extends Component {
               <br />
               <input placeholder="Password" label="Password" name="password" type="password" value={this.state.password} onChange={this.handleInputChange} />
               <br />
-              <button onClick={this.handleClose} color="primary">
-                Cancel
-              </button>
               <button onClick={this.submitForm} color="primary" autoFocus>
                 Login
+              </button>
+              <button onClick={this.handleClose} color="primary">
+                Cancel
               </button>
             </form>
           </div>
