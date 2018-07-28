@@ -56,8 +56,8 @@ class Signups extends Component {
           <br />
           <p>Program:</p>
           <br />
-          <p><input label="Animus" name="Animus" type="checkbox" required value={this.state.animus} onChange={this.handleInputChange} /> Animus </p>
-          <p><input label="Accendo" name="Accendo" type="checkbox" required value={this.state.accendo} onChange={this.handleInputChange} /> Accendo</p>
+          <p><input label="Animus" name="Animus" type="checkbox" required value={this.state.animus} onChange={this.handleInputChange} /> Animus
+          <input label="Accendo" name="Accendo" type="checkbox" required value={this.state.accendo} onChange={this.handleInputChange} /> Accendo</p>
           <br />
           <p>Days:</p>
           <br />
@@ -66,7 +66,7 @@ class Signups extends Component {
           <p><input label="Wednesday" name="Wednesday" type="checkbox" required value={this.state.wednesday} onChange={this.handleInputChange} /> Wednesday </p>
           <p><input label="Thursday" name="Thursday" type="checkbox" required value={this.state.thursday} onChange={this.handleInputChange} /> Thursday </p>
           <p><input label="Friday" name="Friday" type="checkbox" required value={this.state.friday} onChange={this.handleInputChange}/> Friday </p>
-          <p><input label="All Week" name="allWeek" type="checkbox" require value={this.state.allWeek} onChange={this.handleInputChange} /> All Week</p>
+          <p><input label="All Week" name="allWeek" type="checkbox" required value={this.state.allWeek} onChange={this.handleInputChange} /> All Week</p>
           <br />
           <button onClick={this.submitForm}>Signup</button>
         </form>
