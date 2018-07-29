@@ -73,33 +73,39 @@ class Signups extends Component {
     //           grade: this.state.grade,
     //           homeroom: this.state.homeroom,
     //           monday:this.state.monday,
-    //             tuesday:this.state.tuesday,
-    //             wednesday:this.state.wednesday,
-    //             thursday:this.state.thursday,
-    //             friday:this.state.friday,
-    //             allweek:this.state.allweek,
+    //           tuesday:this.state.tuesday,
+    //           wednesday:this.state.wednesday,
+    //           thursday:this.state.thursday,
+    //           friday:this.state.friday,
+    //           allweek:this.state.allweek,
     //         };
   
-    //         API.addChapter(data).then((response) => {
-    //           console.log("Response from adding chapter: ", response);
+    //         API.addScholar(data).then((response) => {
+    //           console.log("Response from adding Scholar: ", response);
     //           this.setState({
-    //             chapterTitle:"",
-    //             description: "",
-    //             image:"",
-    //             date: "",
+    //             childfirstname: '',
+    //             childlastname: '',
+    //             grade: '',
+    //             homeroom: '',
+    //             monday:false,
+    //             tuesday:false,
+    //             wednesday:false,
+    //             thursday: false,
+    //             friday:false,
+    //             allweek:false,
     //         });
     //         })
     //         .catch((err) => {
-    //             console.log('Error while adding chapter: ', err);
-    //             this.setState({ error: "Error while adding chapter."});
+    //             console.log('Error while adding scholar: ', err);
+    //             this.setState({ error: "Error while adding scholar."});
     //             //launch error dialog
     //             this.errDialogOpen();
     //             console.error(this.setSate.error, err);
     //         })
   
-    //         API.getChapters().then((response) => {
+    //         API.getScholar().then((response) => {
     //         this.setState({
-    //             chapterData:response.data
+    //             scholarData:response.data
     //         });
     //           });
     //           });
@@ -107,38 +113,50 @@ class Signups extends Component {
     //       )
     //   } else{
     //     let data = {
-    //       chapTitle: this.state.chapterTitle,
-    //       chapNote: this.state.description,
-    //       reqNum: this.state.requireNum,
-    //       chapDate: this.state.date,
+//           chilefirstname: this.state.childfirstname,
+//           childlastname: this.state.childlastname,
+//           grade: this.state.grade,
+//           homeroom: this.state.homeroom,
+//           monday:this.state.monday,
+//           tuesday:this.state.tuesday,
+//           wednesday:this.state.wednesday,
+//           thursday:this.state.thursday,
+//           friday:this.state.friday,
+//           allweek:this.state.allweek,
     //     };
   
-    //     API.addChapter(data).then((response) => {
-    //       console.log("Response from adding chapter: ", response);
+    //     API.addScholar(data).then((response) => {
+    //       console.log("Response from adding scholar: ", response);
     //       this.setState({
-    //         chapterTitle:"",
-    //         description: "",
-    //         date: "",
-    //         requireNum:"",
+//             childfirstname: '',
+//             childlastname: '',
+//             grade: '',
+//             homeroom: '',
+//             monday:false,
+//             tuesday:false,
+//             wednesday:false,
+//             thursday: false,
+//             friday:false,
+//             allweek:false,
     //     });
     //     })
     //     .catch((err) => {
-    //         console.log('Error while adding chapter: ', err);
-    //         this.setState({ error: "Error while adding chapter."});
+    //         console.log('Error while adding scholar: ', err);
+    //         this.setState({ error: "Error while adding scholar."});
     //     //launch error dialog
     //     this.errDialogOpen();
     //     console.error(this.setSate.error, err);
     //     })
   
-    //     API.getChapters().then((response) => {
+    //     API.getScholar().then((response) => {
     //     this.setState({
-    //         chapterData:response.data
+    //         scholarData:response.data
     //     });
     //       });
     //   };
     //   } else {
-    //   console.log("Unable to add chapter.")
-    //   this.setState({ error: "Incomplete data entered. Chapters require a title, description and date to be added."});
+    //   console.log("Unable to add scholar.")
+    //   this.setState({ error: "Incomplete data entered. Scholar require a first name, last name, grade and homeroom teacher to be added."});
     //     //launch error dialog
     //     this.errDialogOpen();
     //   }
