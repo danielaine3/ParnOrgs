@@ -6,6 +6,7 @@ class Signups extends Component {
       childfirstname: '',
       childlastname: '',
       grade: '',
+      homeroom: '',
       axiosCancelToken: null,
       error: '',
       open: false,
@@ -43,21 +44,21 @@ class Signups extends Component {
         <form>
           <p>Scholar's Name:</p>
           <br />
-          <input label="First Name" placeholder="First" name="firstname" type="text" required value={this.state.childfirstname} onChange={this.handleInputChange} />
-          <input label="Last Name" placeholder="Last" name="lastname" type="text" required value={this.state.childlastname} onChange={this.handleInputChange} />
+          <input label="FirstName" placeholder="First" name="firstname" type="text" required dfaultValue={this.state.childfirstname} onChange={this.handleInputChange} />
+          <input label="LastName" placeholder="Last" name="lastname" type="text" required defaultValue={this.state.childlastname} onChange={this.handleInputChange} />
           <br />
           <p>Scholar's Grade:</p>
           <br />
-          <input label="Grade" placeholder="Grade" name="Grade" type="text" required value={this.state.grade} onChange={this.handleInputChange} />
+          <input label="Grade" placeholder="Grade" name="Grade" type="text" required defaultValue={this.state.grade} onChange={this.handleInputChange} />
           <br />
           <p>Scholar's Homeroom Teacher:</p>
           <br />
-          <input label="teacher" placeholder="Homeroom teacher" name="teacher" type="text" required value={this.state.homeroom} onChange={this.handleInputChange} />
+          <input label="teacher" placeholder="Homeroom teacher" name="teacher" type="text" required defaultValue={this.state.homeroom} onChange={this.handleInputChange} />
           <br />
           <p>Program:</p>
           <br />
-          <p><input label="Animus" name="Animus" type="checkbox" required value={this.state.animus} onChange={this.handleInputChange} /> Animus
-          <input label="Accendo" name="Accendo" type="checkbox" required value={this.state.accendo} onChange={this.handleInputChange} /> Accendo</p>
+          <p><input label="Animus" name="Animus" type="checkbox" required value={this.state.animus} onChange={this.handleInputChange} /> Animus </p>
+          <p><input label="Accendo" name="Accendo" type="checkbox" required value={this.state.accendo} onChange={this.handleInputChange} /> Accendo</p>
           <br />
           <p>Days:</p>
           <br />
