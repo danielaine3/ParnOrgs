@@ -19,9 +19,20 @@ import axios from 'axios';
 // };
 
 export default {
+  //User
   registerUser: data => axios.post('/api/users/register', data),
   loginUser: data => axios.post('/api/users/login', data),
   logoutUser: () => axios.get('/api/users/logout'),
   getCurrentUser: () => axios.get('/api/users/getCurrentUser'),
   updateUser: data => axios.put(`/api/users/${data.id}`, data),
+
+
+  //Scholar
+  addScholar: data => axios.post('/api/scholars/', data),
+  getScholars: () => axios.get('/api/scholars/'),
+  updateScholar: data => axios.put(`/api/scholars/${data._id}`, data),
+  deleteScholar: id => axios.delete(`/api/scholars/${id}`),
+
+  //Dates
+  
 };
