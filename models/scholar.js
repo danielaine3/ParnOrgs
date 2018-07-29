@@ -6,11 +6,11 @@ const scholarSchema = new Schema({
   // Note: actual password won't be stored, only salted hash of password
    firstName: {
     type: String,
-    reqired:true
+    reqired: true
   },
   lastName:{
     type:String,
-    required:true
+    required: true
   },
   grade: {
     type: String,
@@ -21,28 +21,28 @@ const scholarSchema = new Schema({
     required: true,
   }, 
   monday: {
-    type:Boolean,
-    default:false,
+    type: Boolean,
+    default: false,
   },
   tuesday: {
     type: Boolean, 
-    default:false,
+    default: false,
   }, 
   wednesday: {
     type: Boolean,
-    default:false, 
+    default: false, 
   }, 
   thursday : {
     type: Boolean,
-    default:false, 
+    default: false, 
   }, 
   friday: {
     type: Boolean,
-    default:false, 
+    default: false, 
   }, 
   allweek: {
-    type:Boolean, 
-    default:false,
+    type: Boolean, 
+    default: false,
   },
   user: {
     type: Schema.Types.ObjectId, ref: 'user'

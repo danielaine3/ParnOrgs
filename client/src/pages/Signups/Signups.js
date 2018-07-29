@@ -14,19 +14,19 @@ class Signups extends Component {
     thursday:false,
     friday:false,
     allweek:false,
-    axiosCancelToken: null,
+    // axiosCancelToken: null,
     error: '',
     open: false,
   }
 
-  componentDidMount() {
-    API.getCurrentUser().then(response=> {
-      let currentUser = response.data.user
-      this.setState({currentUser: currentUser});
-    }).catch(err =>{
-      console.log("Error while getting current user: ", err)
-    })
-  }
+  // componentDidMount() {
+  //   API.getCurrentUser().then(response=> {
+  //     let currentUser = response.data.user
+  //     this.setState({currentUser: currentUser});
+  //   }).catch(err =>{
+  //     console.log("Error while getting current user: ", err)
+  //   })
+  // }
 
     // open err modal
   errDialogOpen = () => { this.setState({ open: true }); };
@@ -43,7 +43,6 @@ class Signups extends Component {
     //   }
     // }
 
-  handleInputChange = (event) => this.setState({ [event.target.name]: event.target.value });
 
   handleInputChangeForAutoCompleteField = name => (value) => {
     // console.log('name, value', name, value);
