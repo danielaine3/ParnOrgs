@@ -58,109 +58,61 @@ class Signups extends Component {
       this.handleFormSubmit();
     }
 
-    // handleFormSubmit = (event) => {
-    //   event.preventDefault();
-    //   if (this.state.childfirstname && this.state.childlastname && this.state.grade && this.state.homeroom !== "") {
-    //     console.log('current state', this.state);
-    //       }, 
-    //       (err) => {
-    //       },
-    //       () => {
-    //         console.log("COMPLETE");
-    //         let data = {
-    //           chilefirstname: this.state.childfirstname,
-    //           childlastname: this.state.childlastname,
-    //           grade: this.state.grade,
-    //           homeroom: this.state.homeroom,
-    //           monday:this.state.monday,
-    //           tuesday:this.state.tuesday,
-    //           wednesday:this.state.wednesday,
-    //           thursday:this.state.thursday,
-    //           friday:this.state.friday,
-    //           allweek:this.state.allweek,
-    //         };
-  
-    //         API.addScholar(data).then((response) => {
-    //           console.log("Response from adding Scholar: ", response);
-    //           this.setState({
-    //             childfirstname: '',
-    //             childlastname: '',
-    //             grade: '',
-    //             homeroom: '',
-    //             monday:false,
-    //             tuesday:false,
-    //             wednesday:false,
-    //             thursday: false,
-    //             friday:false,
-    //             allweek:false,
-    //         });
-    //         })
-    //         .catch((err) => {
-    //             console.log('Error while adding scholar: ', err);
-    //             this.setState({ error: "Error while adding scholar."});
-    //             //launch error dialog
-    //             this.errDialogOpen();
-    //             console.error(this.setSate.error, err);
-    //         })
-  
-    //         API.getScholar().then((response) => {
-    //         this.setState({
-    //             scholarData:response.data
-    //         });
-    //           });
-    //           });
-    //         }
-    //       )
-    //   } else{
-    //     let data = {
-//           chilefirstname: this.state.childfirstname,
-//           childlastname: this.state.childlastname,
-//           grade: this.state.grade,
-//           homeroom: this.state.homeroom,
-//           monday:this.state.monday,
-//           tuesday:this.state.tuesday,
-//           wednesday:this.state.wednesday,
-//           thursday:this.state.thursday,
-//           friday:this.state.friday,
-//           allweek:this.state.allweek,
-    //     };
-  
-    //     API.addScholar(data).then((response) => {
-    //       console.log("Response from adding scholar: ", response);
-    //       this.setState({
-//             childfirstname: '',
-//             childlastname: '',
-//             grade: '',
-//             homeroom: '',
-//             monday:false,
-//             tuesday:false,
-//             wednesday:false,
-//             thursday: false,
-//             friday:false,
-//             allweek:false,
-    //     });
-    //     })
-    //     .catch((err) => {
-    //         console.log('Error while adding scholar: ', err);
-    //         this.setState({ error: "Error while adding scholar."});
-    //     //launch error dialog
-    //     this.errDialogOpen();
-    //     console.error(this.setSate.error, err);
-    //     })
-  
-    //     API.getScholar().then((response) => {
-    //     this.setState({
-    //         scholarData:response.data
-    //     });
-    //       });
-    //   };
-    //   } else {
-    //   console.log("Unable to add scholar.")
-    //   this.setState({ error: "Incomplete data entered. Scholar require a first name, last name, grade and homeroom teacher to be added."});
-    //     //launch error dialog
-    //     this.errDialogOpen();
-    //   }
-    // }
+    handleFormSubmit = (event) => {
+      event.preventDefault();
+      if (this.state.childfirstname && this.state.childlastname && this.state.grade && this.state.homeroom !== "") {
+        console.log('current state', this.state);
+        (err) => {
+        },
+        () => {
+          console.log("COMPLETE");
+          let data = {
+            chilefirstname: this.state.childfirstname,
+            childlastname: this.state.childlastname,
+            grade: this.state.grade,
+            homeroom: this.state.homeroom,
+            monday:this.state.monday,
+            tuesday:this.state.tuesday,
+            wednesday:this.state.wednesday,
+            thursday:this.state.thursday,
+            friday:this.state.friday,
+            allweek:this.state.allweek,
+          };
+          API.addScholar(data).then((response) => {
+            console.log("Response from adding Scholar: ", response);
+            this.setState({
+              childfirstname: '',
+              childlastname: '',
+              grade: '',
+              homeroom: '',
+              monday:false,
+              tuesday:false,
+              wednesday:false,
+              thursday: false,
+              friday:false,
+              allweek:false,
+          });
+          })
+          .catch((err) => {
+              console.log('Error while adding scholar: ', err);
+              this.setState({ error: "Error while adding scholar."});
+              //launch error dialog
+              this.errDialogOpen();
+              console.error(this.setSate.error, err);
+          })
+          API.getScholar().then((response) => {
+            this.setState({
+              scholarData:response.data
+            });
+          });
+        }
+      } else {
+      console.log("Unable to add scholar.")
+      this.setState({ error: "Incomplete data entered. Scholar require a first name, last name, grade and homeroom teacher to be added."});
+        //launch error dialog
+        this.errDialogOpen();
+      }
+    }
     
   render() {
     // console.log('state upon rendering: ', this.state);
