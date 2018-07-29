@@ -53,10 +53,10 @@ class Signups extends Component {
     //   this.setState(dataToSet);
     // }
   
-    submitForm = (event) => {
-      event.preventDefault();
-      this.handleFormSubmit();
-    }
+    // submitForm = (event) => {
+    //   event.preventDefault();
+    //   this.handleFormSubmit();
+    // }
 
     handleFormSubmit = (event) => {
       event.preventDefault();
@@ -122,7 +122,7 @@ class Signups extends Component {
         <form>
           <p>Scholar's Name:</p>
           <br />
-          <input label="FirstName" placeholder="First" name="firstname" type="text" required dfaultValue={this.state.childfirstname} onChange={this.handleInputChange} />
+          <input label="FirstName" placeholder="First" name="firstname" type="text" required defaultValue={this.state.childfirstname} onChange={this.handleInputChange} />
           <input label="LastName" placeholder="Last" name="lastname" type="text" required defaultValue={this.state.childlastname} onChange={this.handleInputChange} />
           <br />
           <p>Scholar's Grade:</p>
@@ -142,7 +142,9 @@ class Signups extends Component {
           <p><input label="Friday" name="Friday" type="checkbox" required value={this.state.friday} onChange={this.handleInputChange}/> Friday </p>
           <p><input label="All Week" name="allWeek" type="checkbox" required value={this.state.allWeek} onChange={this.handleInputChange} /> All Week</p>
           <br />
-          <button onClick={this.submitForm}>Signup</button>
+          <button onClick={this.handleFormSubmit} 
+          // {...this.state}
+          >Signup</button>
         </form>
       </div>
 
