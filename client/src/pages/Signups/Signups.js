@@ -1,40 +1,148 @@
 import React, { Component } from 'react';
 import "./Signups.css";
+import API from '../../utils/API';
 
 class Signups extends Component {
-    state = {
-      childfirstname: '',
-      childlastname: '',
-      grade: '',
-      homeroom: '',
-      axiosCancelToken: null,
-      error: '',
-      open: false,
-    }
-  
-    // componentDidMount() {
-    //   this.loadCountryData();
-    // }
-  
-    componentWillUnmount() {
-      if (this.state.axiosCancelToken) {
-        this.state.axiosCancelToken.cancel();
-      }
-    }
-    handleInputChange = event => this.setState({ [event.target.name]: event.target.value });
+  state = {
+    childfirstname: '',
+    childlastname: '',
+    grade: '',
+    homeroom: '',
+    monday:false,
+    tuesday:false,
+    wednesday:false,
+    thursday:false,
+    friday:false,
+    allweek:false,
+    axiosCancelToken: null,
+    error: '',
+    open: false,
+  }
 
-    handleInputChangeForAutoCompleteField = name => (value) => {
-      // console.log('name, value', name, value);
-      const dataToSet = {};
-      dataToSet[name] = value;
-      // console.log('new state data to set', dataToSet);
-      this.setState(dataToSet);
-    }
+  componentDidMount() {
+    API.getCurrentUser().then(response=> {
+      let currentUser = response.data.user
+      this.setState({currentUser: currentUser});
+    }).catch(err =>{
+      console.log("Error while getting current user: ", err)
+    })
+  }
+
+    // open err modal
+  errDialogOpen = () => { this.setState({ open: true }); };
+  // close err modal
+  errDialogClose = () => { this.setState({ open: false }); };
+
+	handleInputChange = (event) => this.setState({
+    	[event.target.name]: event.target.value,
+ 	})
+  
+    // componentWillUnmount() {
+    //   if (this.state.axiosCancelToken) {
+    //     this.state.axiosCancelToken.cancel();
+    //   }
+    // }
+
+    // handleInputChange = (event) => this.setState({ [event.target.name]: event.target.value });
+
+    // handleInputChangeForAutoCompleteField = name => (value) => {
+    //   // console.log('name, value', name, value);
+    //   const dataToSet = {};
+    //   dataToSet[name] = value;
+    //   // console.log('new state data to set', dataToSet);
+    //   this.setState(dataToSet);
+    // }
   
     submitForm = (event) => {
       event.preventDefault();
-      this.sendRegistrationData();
+      this.handleFormSubmit();
     }
+
+    // handleFormSubmit = (event) => {
+    //   event.preventDefault();
+    //   if (this.state.childfirstname && this.state.childlastname && this.state.grade && this.state.homeroom !== "") {
+    //     console.log('current state', this.state);
+    //       }, 
+    //       (err) => {
+    //       },
+    //       () => {
+    //         console.log("COMPLETE");
+    //         let data = {
+    //           chilefirstname: this.state.childfirstname,
+    //           childlastname: this.state.childlastname,
+    //           grade: this.state.grade,
+    //           homeroom: this.state.homeroom,
+    //           monday:this.state.monday,
+    //             tuesday:this.state.tuesday,
+    //             wednesday:this.state.wednesday,
+    //             thursday:this.state.thursday,
+    //             friday:this.state.friday,
+    //             allweek:this.state.allweek,
+    //         };
+  
+    //         API.addChapter(data).then((response) => {
+    //           console.log("Response from adding chapter: ", response);
+    //           this.setState({
+    //             chapterTitle:"",
+    //             description: "",
+    //             image:"",
+    //             date: "",
+    //         });
+    //         })
+    //         .catch((err) => {
+    //             console.log('Error while adding chapter: ', err);
+    //             this.setState({ error: "Error while adding chapter."});
+    //             //launch error dialog
+    //             this.errDialogOpen();
+    //             console.error(this.setSate.error, err);
+    //         })
+  
+    //         API.getChapters().then((response) => {
+    //         this.setState({
+    //             chapterData:response.data
+    //         });
+    //           });
+    //           });
+    //         }
+    //       )
+    //   } else{
+    //     let data = {
+    //       chapTitle: this.state.chapterTitle,
+    //       chapNote: this.state.description,
+    //       reqNum: this.state.requireNum,
+    //       chapDate: this.state.date,
+    //     };
+  
+    //     API.addChapter(data).then((response) => {
+    //       console.log("Response from adding chapter: ", response);
+    //       this.setState({
+    //         chapterTitle:"",
+    //         description: "",
+    //         date: "",
+    //         requireNum:"",
+    //     });
+    //     })
+    //     .catch((err) => {
+    //         console.log('Error while adding chapter: ', err);
+    //         this.setState({ error: "Error while adding chapter."});
+    //     //launch error dialog
+    //     this.errDialogOpen();
+    //     console.error(this.setSate.error, err);
+    //     })
+  
+    //     API.getChapters().then((response) => {
+    //     this.setState({
+    //         chapterData:response.data
+    //     });
+    //       });
+    //   };
+    //   } else {
+    //   console.log("Unable to add chapter.")
+    //   this.setState({ error: "Incomplete data entered. Chapters require a title, description and date to be added."});
+    //     //launch error dialog
+    //     this.errDialogOpen();
+    //   }
+    // }
     
   render() {
     // console.log('state upon rendering: ', this.state);
@@ -54,11 +162,6 @@ class Signups extends Component {
           <p>Scholar's Homeroom Teacher:</p>
           <br />
           <input label="teacher" placeholder="Homeroom teacher" name="teacher" type="text" required defaultValue={this.state.homeroom} onChange={this.handleInputChange} />
-          <br />
-          <p>Program:</p>
-          <br />
-          <p><input label="Animus" name="Animus" type="checkbox" required value={this.state.animus} onChange={this.handleInputChange} /> Animus </p>
-          <p><input label="Accendo" name="Accendo" type="checkbox" required value={this.state.accendo} onChange={this.handleInputChange} /> Accendo</p>
           <br />
           <p>Days:</p>
           <br />
