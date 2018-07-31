@@ -128,18 +128,22 @@ class Signups extends Component {
           <br />
           <input label="teacher" placeholder="Homeroom teacher" name="teacher" type="text" required defaultValue={this.state.homeroom} onChange={this.handleInputChange} />
           <br />
-          <p>Days:</p>
           <br />
-          <p><input label="Monday" name="Monday" type="checkbox" required value={this.state.monday} onChange={this.handleInputChange} /> Monday </p>
+          {/* <p>Days:</p>
+          <br /> */}
+          {/* <p><input label="Monday" name="Monday" type="checkbox" required value={this.state.monday} onChange={this.handleInputChange} /> Monday </p>
           <p><input label="Tuesday" name="Tuesday" type="checkbox" required value={this.state.tuesday} onChange={this.handleInputChange} /> Tuesday </p>
           <p><input label="Wednesday" name="Wednesday" type="checkbox" required value={this.state.wednesday} onChange={this.handleInputChange} /> Wednesday </p>
           <p><input label="Thursday" name="Thursday" type="checkbox" required value={this.state.thursday} onChange={this.handleInputChange} /> Thursday </p>
           <p><input label="Friday" name="Friday" type="checkbox" required value={this.state.friday} onChange={this.handleInputChange}/> Friday </p>
           <p><input label="All Week" name="allWeek" type="checkbox" required value={this.state.allWeek} onChange={this.handleInputChange} /> All Week</p>
-          <br />
+          <br /> */}
           <button onClick={this.handleFormSubmit} 
           {...this.state}
           >Signup</button>
+          <br />
+          <br />
+          <br />
         </form>
       </div>
 
