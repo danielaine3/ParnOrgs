@@ -50,8 +50,8 @@ class App extends React.Component {
                   <div>
                     <main>
                       <Switch>
-                        <Route exact path="/" render={() => <ScholarInfo {...this.state} />} />
-                        <Route exact path="/home" render={()=><Home {...this.state} />} />
+                        <Route exact path="/" render={() => <Home {...this.state} />} />
+                        <Route exact path="/Home" render={()=><Home {...this.state} />} />
                         <Route exact path="/ScholarInfo" render={()=> <ScholarInfo {...this.state} />} />
                         <Route exact path="/Signups" render={() => <Signups {...this.state} />} />
                         <Route component={NoMatch} />

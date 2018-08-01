@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import "./ScholarInfo.css";
 import API from '../../utils/API';
 
-class Signups extends Component {
+class ScholarInfo extends Component {
   state = {
     childfirstname: '',
     childlastname: '',
@@ -136,4 +136,4 @@ class Signups extends Component {
   }
 }
 
-export default (Signups);
+export default (ScholarInfo);
