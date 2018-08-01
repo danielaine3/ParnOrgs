@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import "./Home.css";
-
+import { Redirect } from 'react-router-dom'; 
 
 class Home extends Component {
   state = {
-    // childfirstname: '',
-    // childlastname: '',
-    // grade: '',
-    // homeroom: '',
+    redirect:false,
     // axiosCancelToken: null,
     error: '',
     open: false,
@@ -27,9 +24,9 @@ class Home extends Component {
   // close err modal
   errDialogClose = () => { this.setState({ open: false }); };
 
-	handleInputChange = (event) => this.setState({
-    	[event.target.name]: event.target.value,
- 	})
+	// handleInputChange = (event) => this.setState({
+    // 	[event.target.name]: event.target.value,
+ 	// })
   
     // componentWillUnmount() {
     //   if (this.state.axiosCancelToken) {
@@ -38,70 +35,36 @@ class Home extends Component {
     // }
 
 
-  handleInputChangeForAutoCompleteField = name => (value) => {
-    // console.log('name, value', name, value);
-    const dataToSet = {};
-    dataToSet[name] = value;
-    // console.log('new state data to set', dataToSet);
-    this.setState(dataToSet);
-  }
+//   handleInputChangeForAutoCompleteField = name => (value) => {
+//     // console.log('name, value', name, value);
+//     const dataToSet = {};
+//     dataToSet[name] = value;
+//     // console.log('new state data to set', dataToSet);
+//     this.setState(dataToSet);
+//   }
   
     // submitForm = (event) => {
     //   event.preventDefault();
     //   this.handleFormSubmit();
     // }
 
-  handleFormSubmit = (event) => {
-    // event.preventDefault();
-    // if (this.state.childfirstname && this.state.childlastname && this.state.grade && this.state.homeroom !== "") {
-    //   console.log('current state', this.state);
-    //   console.log("COMPLETE");
-    //   let data = {
-    //     // chilefirstname: this.state.childfirstname,
-    //     // childlastname: this.state.childlastname,
-    //     // grade: this.state.grade,
-    //     // homeroom: this.state.homeroom,
-    //     // monday:this.state.monday,
-    //     // tuesday:this.state.tuesday,
-    //     // wednesday:this.state.wednesday,
-    //     // thursday:this.state.thursday,
-    //     // friday:this.state.friday,
-    //     // allweek:this.state.allweek,
-    //   };
-    //   API.addScholar(data).then((response) => {
-    //     console.log("Response from adding Scholar: ", response);
-    //     this.setState({
-    //       childfirstname: '',
-    //       childlastname: '',
-    //       grade: '',
-    //       homeroom: '',
-    //       monday:false,
-    //       tuesday:false,
-    //       wednesday:false,
-    //       thursday: false,
-    //       friday:false,
-    //       allweek:false,
-    //     })
-    //     .catch((err) => {
-    //         console.log('Error while adding scholar: ', err);
-    //         this.setState({ error: "Error while adding scholar."});
-    //         //launch error dialog
-    //         this.errDialogOpen();
-    //         console.error(this.setSate.error, err);
-    //     })
-    //     API.getScholar().then((response) => {
-    //       this.setState({
-    //         scholarData:response.data
-    //       });
-    //     });  
-    //   });
-    // } else {
-    // console.log("Unable to add scholar.")
-    // this.setState({ error: "Incomplete data entered. Scholar require a first name, last name, grade and homeroom teacher to be added."});
-    //   //launch error dialog
-    //   this.errDialogOpen();
-    // }
-  }
+    setRedirect = () => {
+        this.setState({
+            redirect:true
+        })
+    }
+
+    renderRedirect1 = () => {
+        if (this.state.redirect) {
+            return <Redirect to="/ScholarInfo" />
+        }
+    }
+
+    renderRedirect2 = () => {
+        if (this.state.redirect) {
+            return <Redirect to="/Signups" />
+        }
+    }
 
   render() {
     // console.log('state upon rendering: ', this.state);
@@ -111,14 +74,17 @@ class Home extends Component {
         <form>
           <p>Add Scholar:</p>
           <br />
-          <button onClic={this.handleFormSubmit}
-          {...this.state}> Add Scholar </button>
+          <div>
+            {this.renderRedirect1()}
+             <button onClick={this.setRedirect}> Add Scholar </button>
+          </div>
           <br />
-          <p>Add Dates</p>
+          <p>Add Dates:</p>
           <br />
-          <button onClick={this.handleFormSubmit} 
-          {...this.state}
-          >Register</button>
+          <div>
+            {this.renderRedirect2()}
+            <button onClick={this.setRedirect}>Add Dates</button>
+          </div>
           <br />
           <br />
           <br />
