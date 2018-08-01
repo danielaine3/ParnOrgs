@@ -1,0 +1,32 @@
+body {
+    font-family: sans-serif;
+}
+
+.formContainer {
+    margin-top: -400px;
+    margin-left: 10px;
+}
+
+#formTitle {
+    font-family:'Open Sans Condensed', sans-serif;
+    font-size:25px;
+    color:#FFFFFF;
+}
+
+p {
+    font-family:'Open Sans Condensed', sans-serif;
+    font-size:20px;
+    color:#FFFFFF;
+    margin-bottom:0;
+    margin-right: 20px;
+    display:inline-block;
+}
+
+input[type="checkbox" i] {
+    width: 5px;
+}
+
+button {
+    font-size: 14px;
+    margin: 5px;
+}
