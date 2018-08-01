@@ -12,6 +12,7 @@ import NoMatch from './pages/NoMatch';
 // import Registration from './pages/Registration';
 import Signups from './pages/Signups';
 import ScholarInfo from './pages/ScholarInfo';
+import Home from './pages/Home';
 
 if (process.env.NODE_ENV !== 'production') require('dotenv').config({slient:true});
 
@@ -50,6 +51,7 @@ class App extends React.Component {
                     <main>
                       <Switch>
                         <Route exact path="/" render={() => <ScholarInfo {...this.state} />} />
+                        <Route exact path="/home" render={()=><Home {...this.state} />} />
                         <Route exact path="/ScholarInfo" render={()=> <ScholarInfo {...this.state} />} />
                         <Route exact path="/Signups" render={() => <Signups {...this.state} />} />
                         <Route component={NoMatch} />
