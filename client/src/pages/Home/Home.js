@@ -23,31 +23,7 @@ class Home extends Component {
   errDialogOpen = () => { this.setState({ open: true }); };
   // close err modal
   errDialogClose = () => { this.setState({ open: false }); };
-
-	// handleInputChange = (event) => this.setState({
-    // 	[event.target.name]: event.target.value,
- 	// })
   
-    // componentWillUnmount() {
-    //   if (this.state.axiosCancelToken) {
-    //     this.state.axiosCancelToken.cancel();
-    //   }
-    // }
-
-
-//   handleInputChangeForAutoCompleteField = name => (value) => {
-//     // console.log('name, value', name, value);
-//     const dataToSet = {};
-//     dataToSet[name] = value;
-//     // console.log('new state data to set', dataToSet);
-//     this.setState(dataToSet);
-//   }
-  
-    // submitForm = (event) => {
-    //   event.preventDefault();
-    //   this.handleFormSubmit();
-    // }
-
     setRedirect1 = () => {
         this.setState({
             redirect1:true
