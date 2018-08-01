@@ -48,20 +48,26 @@ class Home extends Component {
     //   this.handleFormSubmit();
     // }
 
-    setRedirect = () => {
+    setRedirect1 = () => {
         this.setState({
-            redirect:true
+            redirect1:true
         })
     }
 
     renderRedirect1 = () => {
-        if (this.state.redirect) {
+        if (this.state.redirect1) {
             return <Redirect to="/ScholarInfo" />
         }
     }
 
+    setRedirect2 = () => {
+        this.setState({
+            redirect2:true
+        })
+    }
+
     renderRedirect2 = () => {
-        if (this.state.redirect) {
+        if (this.state.redirect2) {
             return <Redirect to="/Signups" />
         }
     }
@@ -76,15 +82,19 @@ class Home extends Component {
           <br />
           <div>
             {this.renderRedirect1()}
-             <button onClick={this.setRedirect}> Add Scholar </button>
+             <button onClick={this.setRedirect1}> Add Scholar </button>
           </div>
           <br />
           <p>Add Dates:</p>
           <br />
           <div>
             {this.renderRedirect2()}
-            <button onClick={this.setRedirect}>Add Dates</button>
+            <button onClick={this.setRedirect2}>Add Dates</button>
           </div>
+          <br />
+          <br />
+          <br />
+          <br />
           <br />
           <br />
           <br />

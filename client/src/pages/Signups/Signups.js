@@ -115,29 +115,15 @@ class Signups extends Component {
       <div className="formContainer">
         <div id="formTitle">Animus/Accendo Signup</div>
         <form>
-          <p>Scholar's Name:</p>
-          <br />
-          <input label="FirstName" placeholder="First" name="firstname" type="text" required defaultValue={this.state.childfirstname} onChange={this.handleInputChange} />
-          <input label="LastName" placeholder="Last" name="lastname" type="text" required defaultValue={this.state.childlastname} onChange={this.handleInputChange} />
-          <br />
-          <p>Scholar's Grade:</p>
-          <br />
-          <input label="Grade" placeholder="Grade" name="Grade" type="text" required defaultValue={this.state.grade} onChange={this.handleInputChange} />
-          <br />
-          <p>Scholar's Homeroom Teacher:</p>
-          <br />
-          <input label="teacher" placeholder="Homeroom teacher" name="teacher" type="text" required defaultValue={this.state.homeroom} onChange={this.handleInputChange} />
-          <br />
-          <br />
-          {/* <p>Days:</p>
-          <br /> */}
-          {/* <p><input label="Monday" name="Monday" type="checkbox" required value={this.state.monday} onChange={this.handleInputChange} /> Monday </p>
+          <p>Days:</p>
+          <br /> 
+          <p><input label="Monday" name="Monday" type="checkbox" required value={this.state.monday} onChange={this.handleInputChange} /> Monday </p>
           <p><input label="Tuesday" name="Tuesday" type="checkbox" required value={this.state.tuesday} onChange={this.handleInputChange} /> Tuesday </p>
           <p><input label="Wednesday" name="Wednesday" type="checkbox" required value={this.state.wednesday} onChange={this.handleInputChange} /> Wednesday </p>
           <p><input label="Thursday" name="Thursday" type="checkbox" required value={this.state.thursday} onChange={this.handleInputChange} /> Thursday </p>
           <p><input label="Friday" name="Friday" type="checkbox" required value={this.state.friday} onChange={this.handleInputChange}/> Friday </p>
           <p><input label="All Week" name="allWeek" type="checkbox" required value={this.state.allWeek} onChange={this.handleInputChange} /> All Week</p>
-          <br /> */}
+          <br />
           <button onClick={this.handleFormSubmit} 
           {...this.state}
           >Signup</button>
