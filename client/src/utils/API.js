@@ -34,5 +34,8 @@ export default {
   deleteScholar: id => axios.delete(`/api/scholars/${id}`),
 
   //Dates
-  
+  addDates: data=> axios.post('/api/scholars/', data),
+  getDates: () => axios.get('api/scholars'),
+  updateDates: data=> axios.put(`/api/scholars/${data._id}`, data),
+  deleteDates: data=>axios.delete(`/api/scholars/${id}`),
 };
