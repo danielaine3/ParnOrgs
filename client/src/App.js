@@ -49,6 +49,7 @@ class App extends React.Component {
                     <main>
                       <Switch>
                         <Route exact path="/" render={() => <Signups {...this.state} />} />
+                        <Route exact path="/ScholarInfo" render={()=> <ScholarInfo {...this.state} />} />
                         <Route exact path="/Signups" render={() => <Signups {...this.state} />} />
                         <Route component={NoMatch} />
                       </Switch>
