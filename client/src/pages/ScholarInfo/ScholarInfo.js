@@ -111,16 +111,16 @@ class ScholarInfo extends Component {
         <form>
           <p>Scholar's Name:</p>
           <br />
-          <input label="FirstName" placeholder="First" name="firstname" type="text" required defaultValue={this.state.childfirstname} onChange={this.handleInputChange} />
-          <input label="LastName" placeholder="Last" name="lastname" type="text" required defaultValue={this.state.childlastname} onChange={this.handleInputChange} />
+          <input label="childfirstName" placeholder="First" name="childfirstname" type="text" required defaultValue={this.state.childfirstname} onChange={this.handleInputChange} />
+          <input label="childlastName" placeholder="Last" name="childlastname" type="text" required defaultValue={this.state.childlastname} onChange={this.handleInputChange} />
           <br />
           <p>Scholar's Grade:</p>
           <br />
-          <input label="Grade" placeholder="Grade" name="Grade" type="text" required defaultValue={this.state.grade} onChange={this.handleInputChange} />
+          <input label="grade" placeholder="Grade" name="grade" type="text" required defaultValue={this.state.grade} onChange={this.handleInputChange} />
           <br />
           <p>Scholar's Homeroom Teacher:</p>
           <br />
-          <input label="teacher" placeholder="Homeroom teacher" name="teacher" type="text" required defaultValue={this.state.homeroom} onChange={this.handleInputChange} />
+          <input label="homeroom" placeholder="Homeroom teacher" name="homeroom" type="text" required defaultValue={this.state.homeroom} onChange={this.handleInputChange} />
           <br />
           <br />
           <button onClick={this.handleFormSubmit} 
