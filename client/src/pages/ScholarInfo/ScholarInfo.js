@@ -61,12 +61,12 @@ class ScholarInfo extends Component {
         childlastname: this.state.childlastname,
         grade: this.state.grade,
         homeroom: this.state.homeroom,
-        monday:this.state.monday,
-        tuesday:this.state.tuesday,
-        wednesday:this.state.wednesday,
-        thursday:this.state.thursday,
-        friday:this.state.friday,
-        allweek:this.state.allweek,
+        // monday:this.state.monday,
+        // tuesday:this.state.tuesday,
+        // wednesday:this.state.wednesday,
+        // thursday:this.state.thursday,
+        // friday:this.state.friday,
+        // allweek:this.state.allweek,
       };
       API.addScholar(data).then((response) => {
         console.log("Response from adding Scholar: ", response);
@@ -75,12 +75,12 @@ class ScholarInfo extends Component {
           childlastname: '',
           grade: '',
           homeroom: '',
-          monday:false,
-          tuesday:false,
-          wednesday:false,
-          thursday: false,
-          friday:false,
-          allweek:false,
+          // monday:false,
+          // tuesday:false,
+          // wednesday:false,
+          // thursday: false,
+          // friday:false,
+          // allweek:false,
         })
         .catch((err) => {
             console.log('Error while adding scholar: ', err);
@@ -104,10 +104,10 @@ class ScholarInfo extends Component {
   }
 
   render() {
-    // console.log('state upon rendering: ', this.state);
+    console.log('state upon rendering: ', this.state);
     return (
       <div className="formContainer">
-        <div id="formTitle">Animus/Accendo Signup</div>
+        <div id="formTitle">Add Scholar</div>
         <form>
           <p>Scholar's Name:</p>
           <br />

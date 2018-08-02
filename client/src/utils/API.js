@@ -29,7 +29,7 @@ export default {
 
   //Scholar
   addScholar: data => axios.post('/api/scholars/', data),
-  getScholars: () => axios.get('/api/scholars/'),
+  getScholar: () => axios.get('/api/scholars/'),
   updateScholar: data => axios.put(`/api/scholars/${data._id}`, data),
   deleteScholar: id => axios.delete(`/api/scholars/${id}`),
 

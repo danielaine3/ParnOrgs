@@ -10,5 +10,4 @@ router.route('/:id')
   .put(scholarController.update)
   .delete(scholarController.remove);
 
-
 module.exports = router;
