@@ -104,7 +104,7 @@ class ScholarInfo extends Component {
   }
 
   render() {
-    console.log('state upon rendering: ', this.state);
+    // console.log('state upon rendering: ', this.state);
     return (
       <div className="formContainer">
         <div id="formTitle">Add Scholar</div>
