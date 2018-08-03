@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const scholarSchema = new Schema({
-  // Note: actual password won't be stored, only salted hash of password
    firstName: {
     type: String,
     reqired: true
