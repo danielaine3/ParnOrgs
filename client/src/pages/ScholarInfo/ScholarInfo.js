@@ -57,16 +57,10 @@ class ScholarInfo extends Component {
       console.log('current state', this.state);
       console.log("COMPLETE");
       let data = {
-        chilefirstname: this.state.childfirstname,
+        childfirstname: this.state.childfirstname,
         childlastname: this.state.childlastname,
         grade: this.state.grade,
         homeroom: this.state.homeroom,
-        // monday:this.state.monday,
-        // tuesday:this.state.tuesday,
-        // wednesday:this.state.wednesday,
-        // thursday:this.state.thursday,
-        // friday:this.state.friday,
-        // allweek:this.state.allweek,
       };
       API.addScholar(data).then((response) => {
         console.log("Response from adding Scholar: ", response);
@@ -75,13 +69,8 @@ class ScholarInfo extends Component {
           childlastname: '',
           grade: '',
           homeroom: '',
-          // monday:false,
-          // tuesday:false,
-          // wednesday:false,
-          // thursday: false,
-          // friday:false,
-          // allweek:false,
-        })
+        });
+      })
         .catch((err) => {
             console.log('Error while adding scholar: ', err);
             this.setState({ error: "Error while adding scholar."});
@@ -94,7 +83,6 @@ class ScholarInfo extends Component {
             scholarData:response.data
           });
         });  
-      });
     } else {
     console.log("Unable to add scholar.")
     this.setState({ error: "Incomplete data entered. Scholar require a first name, last name, grade and homeroom teacher to be added."});
@@ -124,7 +112,7 @@ class ScholarInfo extends Component {
           <br />
           <br />
           <button onClick={this.handleFormSubmit} 
-          {...this.state}
+          {...this.state.scholardata}
           >Add Scholar</button>
           <br />
           <br />
