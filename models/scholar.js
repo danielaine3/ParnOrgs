@@ -3,12 +3,12 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const scholarSchema = new Schema({
-   childfirstName: {
+   childfirstname: {
     type: String,
     reqired: true,
   },
-  childlastName:{
-    type:String,
+  childlastname:{
+    type: String,
     required: true,
   },
   grade: {
