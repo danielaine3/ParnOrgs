@@ -45,11 +45,6 @@ class ScholarInfo extends Component {
     // console.log('new state data to set', dataToSet);
     this.setState(dataToSet);
   }
-  
-    // submitForm = (event) => {
-    //   event.preventDefault();
-    //   this.handleFormSubmit();
-    // }
 
   handleFormSubmit = (event) => {
     event.preventDefault();
@@ -65,29 +60,29 @@ class ScholarInfo extends Component {
       API.addScholar(data).then((response) => {
         console.log("Response from adding Scholar: ", response);
         this.setState({
-          childfirstname: '',
-          childlastname: '',
-          grade: '',
-          homeroom: '',
+          childfirstname:'',
+          childlastname:'',
+          grade:'',
+          homeroom:'',
         });
       })
-        .catch((err) => {
-            console.log('Error while adding scholar: ', err);
-            this.setState({ error: "Error while adding scholar."});
-            //launch error dialog
-            this.errDialogOpen();
-            console.error(this.setSate.error, err);
-        })
-        API.getScholar().then((response) => {
-          this.setState({
-            scholarData:response.data
-          });
-        });  
+      .catch((err) => {
+        console.log('Error while adding scholar: ', err);
+        this.setState({ error: "Error while adding scholar."});
+        //launch error dialog
+        this.errDialogOpen();
+        console.error(this.setSate.error, err);
+      })
+      API.getScholar().then((response) => {
+        this.setState({
+          scholarData:response.data
+        });
+      });  
     } else {
-    console.log("Unable to add scholar.")
-    this.setState({ error: "Incomplete data entered. Scholar require a first name, last name, grade and homeroom teacher to be added."});
-      //launch error dialog
-      this.errDialogOpen();
+      console.log("Unable to add scholar.")
+      this.setState({ error: "Incomplete data entered. Scholar require a first name, last name, grade and homeroom teacher to be added."});
+        //launch error dialog
+        this.errDialogOpen();
     }
   }
 
@@ -119,6 +114,12 @@ class ScholarInfo extends Component {
           <br />
         </form>
       </div>
+      // <div>
+      //   <ScholarCard 
+      //   scholar={this.state.scholarData}
+      //   deleteScholar={this.deleteScholar}
+      //   />
+      // </div>
 
     );
   }
