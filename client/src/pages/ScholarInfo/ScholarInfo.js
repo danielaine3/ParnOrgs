@@ -21,7 +21,7 @@ class ScholarInfo extends Component {
       console.log("Error while getting current user: ", err)
     })
 
-    API.getScholars().then(response=> {
+    API.getScholar().then(response=> {
       this.setState({
         scholarData:response.data
       })
