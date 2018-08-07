@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import "./ScholarInfo.css";
-import API from '../../utils/API';
 import ScholarCard from './ScholarCard';
+import API from '../../utils/API';
 
 class ScholarInfo extends Component {
   state = {
@@ -9,19 +9,26 @@ class ScholarInfo extends Component {
     childlastname: '',
     grade: '',
     homeroom: '',
-    // axiosCancelToken: null,
-    error: '',
+    scholarData: [],
     open: false,
   }
 
-  // componentDidMount() {
-  //   API.getCurrentUser().then(response=> {
-  //     let currentUser = response.data.user
-  //     this.setState({currentUser: currentUser});
-  //   }).catch(err =>{
-  //     console.log("Error while getting current user: ", err)
-  //   })
-  // }
+  componentDidMount() {
+    API.getCurrentUser().then(response=> {
+      let currentUser = response.data.user
+      this.setState({currentUser: currentUser});
+    }).catch(err =>{
+      console.log("Error while getting current user: ", err)
+    })
+
+    API.getScholars().then(response=> {
+      this.setState({
+        scholarData:response.data
+      })
+    }).catch(err =>{
+      console.log("Error while getting scholars: ", err)
+    })
+  }
 
     // open err modal
   errDialogOpen = () => { this.setState({ open: true }); };
@@ -31,13 +38,6 @@ class ScholarInfo extends Component {
 	handleInputChange = (event) => this.setState({
     	[event.target.name]: event.target.value,
  	})
-  
-    // componentWillUnmount() {
-    //   if (this.state.axiosCancelToken) {
-    //     this.state.axiosCancelToken.cancel();
-    //   }
-    // }
-
 
   handleInputChangeForAutoCompleteField = name => (value) => {
     // console.log('name, value', name, value);
@@ -87,6 +87,21 @@ class ScholarInfo extends Component {
     }
   }
 
+  deleteScholar = (event) => {
+    console.log("Deleting scholar.");
+    let deleteButton= document.getElementById("deleteButton");
+    let scholarId= deleteButton.accessKey;
+    //This will delete form database
+    API.deleteScholar(scholarId).then((response) =>{
+      console.log("Response from deleting scholar: ", response);
+      API.getScholars().then((response) => {
+        this.setState({
+          scholarData:response.data
+        });
+      });
+    })
+  }
+
   render() {
     // console.log('state upon rendering: ', this.state);
     return (
@@ -114,9 +129,9 @@ class ScholarInfo extends Component {
           <br />
           <br />
         </form>
-        <div className="cardcontainer">
+        <div>
           <ScholarCard 
-          scholar={this.state.scholarData}
+          scholars={this.state.scholarData}
           deleteScholar={this.deleteScholar}
           />
         </div>

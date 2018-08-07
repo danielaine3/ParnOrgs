@@ -1,14 +1,14 @@
 import React from 'react';
 
 const ScholarContent = props => (
-    <div class={props.classes.card}>
-        <div class="cardcontent">
+    <div className={props.classes.card}>
+        <div className="cardcontent">
             <p>{props.childfirstname}</p>
             <p>{props.childlastname}</p>
             <p>{props.grade}</p>
             <p>{props.homeroom}</p>
 
-            <div class={props.classes.deleteBtn}>
+            <div className={props.classes.deleteBtn}>
                 <button 
                 id="deleteButton"
                 accessKey={props._id}
