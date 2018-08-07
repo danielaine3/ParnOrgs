@@ -94,7 +94,7 @@ class ScholarInfo extends Component {
     //This will delete form database
     API.deleteScholar(scholarId).then((response) =>{
       console.log("Response from deleting scholar: ", response);
-      API.getScholars().then((response) => {
+      API.getScholar().then((response) => {
         this.setState({
           scholarData:response.data
         });
