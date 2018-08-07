@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import "./ScholarInfo.css";
 import API from '../../utils/API';
+import ScholarCard from './ScholarCard';
 
 class ScholarInfo extends Component {
   state = {
@@ -113,14 +114,13 @@ class ScholarInfo extends Component {
           <br />
           <br />
         </form>
+        <div className="cardcontainer">
+          <ScholarCard 
+          scholar={this.state.scholarData}
+          deleteScholar={this.deleteScholar}
+          />
+        </div>
       </div>
-      // <div>
-      //   <ScholarCard 
-      //   scholar={this.state.scholarData}
-      //   deleteScholar={this.deleteScholar}
-      //   />
-      // </div>
-
     );
   }
 }

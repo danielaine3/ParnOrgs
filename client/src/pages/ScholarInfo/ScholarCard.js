@@ -3,7 +3,7 @@ import ScholarContent from './ScholarContent';
 import './ScholarCard.css';
 
 const ScholarCard = props => (
-    <div class={props.classes.scholars}>
+    <div className={props.classes.scholars}>
         <title>Scholars</title>
         {props.scholars.map(scholar =>
         <ScholarContent key={scholar._id} {...scholar} deleteScholar={props.deleteScholar} />)}
