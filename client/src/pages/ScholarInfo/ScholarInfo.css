@@ -30,3 +30,14 @@ button {
     font-size: 14px;
     margin: 5px;
 }
+
+.cardcontent {
+    background:green;
+    border: solid black 1px;
+    width: 200px;
+    height: 150px;
+}
+
+p {
+    width: 75px;
+}
