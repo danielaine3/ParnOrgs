@@ -1,6 +1,5 @@
 import React from 'react';
 import ScholarContent from './ScholarContent';
-import './ScholarCard.css';
 
 const ScholarCard = props => (
   <div className={props.scholars}>

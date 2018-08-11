@@ -36,6 +36,7 @@ button {
     border: solid black 1px;
     width: 200px;
     height: 150px;
+    margin-bottom:10px;
 }
 
 p {
