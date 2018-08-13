@@ -31,16 +31,24 @@ button {
     margin: 5px;
 }
 
+#cardTitle{
+    color:#000000;
+    margin-top:100px;
+}
+
 .cardcontent {
     float:left;
-    background:#5670A1;
+    background:#9B2D3A;
     border: solid black 1px;
-    width: 200px;
+    width: 250px;
     height: 150px;
-    margin-bottom:10px;
-    margin-right:10px;
+    margin: 10px 10px 10px 10px;
 }
 
 p {
-    width: 75px;
+    width: 300px;
+}
+
+.props {
+    width: 100px;
 }

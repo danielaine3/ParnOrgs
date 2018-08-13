@@ -130,6 +130,7 @@ class ScholarInfo extends Component {
           <br />
         </form>
         <div>
+          <p id="cardTitle">Scholars</p>
           <ScholarCard 
           scholars={this.state.scholarData}
           deleteScholar={this.deleteScholar}
