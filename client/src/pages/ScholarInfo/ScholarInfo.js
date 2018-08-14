@@ -106,8 +106,8 @@ class ScholarInfo extends Component {
     // console.log('state upon rendering: ', this.state);
     return (
       <div className="formContainer">
+        <form id="scholarRegister">
         <div id="formTitle">Add Scholar</div>
-        <form>
           <p>Scholar's Name:</p>
           <br />
           <input label="childfirstName" placeholder="First" name="childfirstname" type="text" required defaultValue={this.state.childfirstname} onChange={this.handleInputChange} />

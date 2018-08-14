@@ -2,6 +2,10 @@ body {
     font-family: sans-serif;
 }
 
+#scholarRegister {
+    background-color:#5670A1;
+}
+
 .formContainer {
     margin-top: -400px;
     margin-left: 10px;
@@ -10,7 +14,7 @@ body {
 #formTitle {
     font-family:'Open Sans Condensed', sans-serif;
     font-size:25px;
-    color:#FFFFFF;
+    color:#6B747A;
 }
 
 p {
@@ -32,8 +36,7 @@ button {
 }
 
 #cardTitle{
-    color:#000000;
-    margin-top:100px;
+    color:#6B747A;
 }
 
 .cardcontent {
