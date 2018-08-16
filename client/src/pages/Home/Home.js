@@ -52,8 +52,9 @@ class Home extends Component {
     // console.log('state upon rendering: ', this.state);
     return (
       <div className="formContainer">
+
+        <form id="directionForm">
         <div id="formTitle">Animus/Accendo Signup</div>
-        <form>
           <p>Add Scholar:</p>
           <br />
           <div>

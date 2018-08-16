@@ -113,8 +113,8 @@ class Signups extends Component {
     // console.log('state upon rendering: ', this.state);
     return (
       <div className="formContainer">
+        <form id="dayReg">
         <div id="formTitle">Animus/Accendo Signup</div>
-        <form>
           <p>Days:</p>
           <br /> 
           <p><input label="Monday" name="Monday" type="checkbox" required value={this.state.monday} onChange={this.handleInputChange} /> Monday </p><br />

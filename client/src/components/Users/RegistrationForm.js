@@ -100,8 +100,9 @@ class RegistrationForm extends Component {
     // console.log('state upon rendering: ', this.state);
     return (
       <div className="formContainer">
+        
+        <form id="createUser">
         <div id="formTitle">Create Account</div>
-        <form>
           <p>Name:</p>
           <br />
           <input label="First Name" placeholder="First" name="firstname" type="text" required value={this.state.firstname} onChange={this.handleInputChange} />

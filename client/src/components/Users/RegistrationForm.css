@@ -7,6 +7,10 @@ body {
     margin-left: 10px;
 }
 
+#createUser{
+    background-color: #5670A1;
+}
+
 #formTitle {
     font-family:'Open Sans Condensed', sans-serif;
     font-size:25px;
