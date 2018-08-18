@@ -13,6 +13,9 @@ body {
     color:#FFFFFF;
 }
 
+form {
+    padding-left:10px;
+}
 p {
     font-family:'Open Sans Condensed', sans-serif;
     font-size:20px;
