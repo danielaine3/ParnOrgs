@@ -11,12 +11,12 @@ body {
     font-family:'Open Sans Condensed', sans-serif;
     font-size:25px;
     color:#FFFFFF;
-    border: solid black 1px;
 }
 
 form {
-    padding-left:10px;
+    padding:25px;
 }
+
 p {
     font-family:'Open Sans Condensed', sans-serif;
     font-size:20px;
