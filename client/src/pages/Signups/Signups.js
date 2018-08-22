@@ -115,7 +115,7 @@ class Signups extends Component {
       <div className="formContainer">
         <form id="dayReg">
         <div id="formTitle">Animus/Accendo Signup</div>
-          <p>Days:</p>
+          {/* <p>Days:</p>
           <br /> 
           <p><input label="Monday" name="Monday" type="checkbox" required value={this.state.monday} onChange={this.handleInputChange} /> Monday </p><br />
           <p><input label="Tuesday" name="Tuesday" type="checkbox" required value={this.state.tuesday} onChange={this.handleInputChange} /> Tuesday </p><br />
@@ -123,7 +123,7 @@ class Signups extends Component {
           <p><input label="Thursday" name="Thursday" type="checkbox" required value={this.state.thursday} onChange={this.handleInputChange} /> Thursday </p><br />
           <p><input label="Friday" name="Friday" type="checkbox" required value={this.state.friday} onChange={this.handleInputChange}/> Friday </p><br />
           <p><input label="All Week" name="allWeek" type="checkbox" required value={this.state.allWeek} onChange={this.handleInputChange} /> All Week</p><br />
-          <br />
+          <br /> */}
           <button onClick={this.handleFormSubmit} 
           {...this.state}
           >Signup</button>
